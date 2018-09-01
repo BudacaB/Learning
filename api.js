@@ -6,6 +6,9 @@ const rp = require("request-promise");
 
 
 class PoliceApi {
+    getName(name){
+        return "Hello " + name;
+    }
     getListOfForces(link){
         rp.get(link).then(
             function parcurgere(raspuns){

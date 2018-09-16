@@ -326,14 +326,16 @@ afiseazaElement()
 
 
 
-
-/*const PoliceApi = require('./api.js')
+/*
+const PoliceApi = require('./api.js')
 
 let api = new PoliceApi();
 
 api.getSpecificForce('https://data.police.uk/api/forces/leicestershire')
 */
 
+
+/*
 const HavingFun = require('./exercises.js')
 
 let newObj = new HavingFun();
@@ -343,3 +345,4 @@ console.log(rezultatFinal)
 
 let rezultatFinal2 = newObj.wordCounter('Ana are mere si mere mere mere', 'Ana')
 console.log(rezultatFinal2)
+*/

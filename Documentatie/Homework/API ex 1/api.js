@@ -1,4 +1,5 @@
 // https://data.police.uk/api/forces/leicestershire/people
+//Fa o fct care sa cheme linku de mai sus si pt fiecare staff member sa compuna/afiseze un string care zice: (primul console.log/string)Nume: numele lui, rank: rankul lui (al doilea console.log/string) Daca rankul este de chief sa arate chief: true ; daca nu este chief iti arata chief: false (vazut doc despre cautat string in string)
 
 const rp = require("request-promise");
 

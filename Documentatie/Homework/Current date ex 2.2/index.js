@@ -10,7 +10,19 @@ currentDate()
 */
 
 const currentDate = () => {
-    console.log(Date())
+
+    const z = new Date()
+
+    //weekday
+    const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+
+    //month
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+    ]
+
+    console.log(weekdays[z.getDay()] + ', ' + z.getDate() + ' ' + monthNames[z.getMonth()] + ' ' + z.getFullYear())
+    
 }
 
 currentDate()

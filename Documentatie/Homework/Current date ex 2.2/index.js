@@ -1,5 +1,6 @@
 // Modifica functia care arata data curenta sa afiseze in formatul: 
 // "Tuesday, 15 October 2018"
+// Try also with moment.js - npm install
 
 /*
 const currentDate = () => {

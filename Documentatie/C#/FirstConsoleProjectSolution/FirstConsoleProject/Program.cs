@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FirstConsoleProject
 {
@@ -6,43 +7,31 @@ namespace FirstConsoleProject
     {
         static void Main(string[] args)     // this is method called "Main". It is called when the program starts
         {
-            Random numberGenerator = new Random();
 
-            int num1 = numberGenerator.Next(1, 11);
-            int num2 = numberGenerator.Next(1, 11);
-            int responseIndex = numberGenerator.Next(1, 4);
+            // Multidimensional arrays
+            CreateGrid();
 
-            Console.WriteLine("What is the result of " + num1 + " times " + num2 + "?");
-            int answer = Convert.ToInt32(Console.ReadLine());
-            if (answer == num1 * num2)
+            Console.ReadKey();
+        }
+
+        public static void CreateGrid()
+        {
+            int width = 5;
+            int height = 5;
+
+            int[,] grid = new int[width,height];
+            grid[2, 3] = 3;
+            grid[1, 2] = 4;
+
+            for (int x = 0; x < width; x++)
             {
-                switch (responseIndex)
+                for (int y = 0; y < height; y++)
                 {
-                    case 1:
-                        Console.WriteLine("Congrats, you've got it!");
-                        break;
-                    case 2:
-                        Console.WriteLine("Correct!");
-                        break;
-                    default:
-                        Console.WriteLine("Well done!");
-                        break;
+                    Console.Write(grid[x,y] + " ");
                 }
-            } else
-            {
-                switch (responseIndex)
-                {
-                    case 1:
-                        Console.WriteLine("Are you even trying?");
-                        break;
-                    case 2:
-                        Console.WriteLine("The answer was incorrect.");
-                        break;
-                    default:
-                        Console.WriteLine("You can do better than that.");
-                        break;
-                }
+                Console.WriteLine();
             }
         }
+
     }
 }

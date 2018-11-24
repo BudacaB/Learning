@@ -27,9 +27,9 @@ namespace FirstConsoleProject
             {
                 for (int y = 0; y < height; y++)
                 {
-                    Console.Write(grid[x,y] + " ");
+                    Console.WriteLine();
                 }
-                Console.WriteLine();
+                Console.Write(grid[x, y] + " ");
             }
         }
 

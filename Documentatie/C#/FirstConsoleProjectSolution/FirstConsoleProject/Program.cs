@@ -8,29 +8,21 @@ namespace FirstConsoleProject
         static void Main(string[] args)     // this is method called "Main". It is called when the program starts
         {
 
-            // Multidimensional arrays
-            CreateGrid();
+            Random numberGen = new Random();
+
+            int numberOfAttempts = 0;
+            int attempt = 0;
+
+            while (attempt != 6)
+            {
+                attempt = numberGen.Next(1, 7);
+                Console.WriteLine("Tom rolled: " + attempt + ".");
+                numberOfAttempts++;
+            }
+
+            Console.WriteLine("It took Tom " + numberOfAttempts + " attempts to roll a six");
 
             Console.ReadKey();
-        }
-
-        public static void CreateGrid()
-        {
-            int width = 5;
-            int height = 5;
-
-            int[,] grid = new int[width,height];
-            grid[2, 3] = 3;
-            grid[1, 2] = 4;
-
-            for (int x = 0; x < width; x++)
-            {
-                for (int y = 0; y < height; y++)
-                {
-                    Console.Write(grid[x, y] + " ");
-                }
-                Console.WriteLine();
-            }
         }
 
     }

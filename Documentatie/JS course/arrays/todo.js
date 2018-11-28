@@ -1,8 +1,13 @@
-// Create an array with 5 different todos
-// You have x todos
-// Print the first and second to last items -> Todo: talk the dog
-
 const todos = ['workout', 'brush teeth', 'learn German', 'learn to code', 'do dishes']
+
+// Delete the 3rd item
+todos.splice(2, 1)
+// Add a new item onto the end
+todos.push('get food')
+// Remove the first item from the list
+todos.shift()
+
 console.log(`You have ${todos.length} todos`)
-console.log('First todo: ' + todos[0])
-console.log('Second to last todo: ' + todos[todos.length - 2])
+console.log(todos)
+
+

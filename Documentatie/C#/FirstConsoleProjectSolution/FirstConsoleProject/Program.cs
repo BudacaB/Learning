@@ -3,24 +3,63 @@ using System.Collections.Generic;
 
 namespace FirstConsoleProject
 {
+
+    class Animal
+    {
+        // CLASS VARIABLES
+
+        public static int Count = 0;
+
+        public string name;
+        public int age;
+        public float happiness;
+
+        // CLASS CONSTRUCTORS
+
+        public Animal ()
+        {
+            name = "Bruno";
+            age = 6;
+            happiness = 0.5f;
+
+            Count++;
+        }
+
+        public Animal (string _name, int _age, float _happiness)
+        {
+            name = _name;
+            age = _age;
+            happiness = _happiness;
+
+            Count++;
+        }
+
+        // CLASS METHODS
+
+        public void Print ()
+        {
+            Console.WriteLine("Name: " + name);
+            Console.WriteLine("Age: " + age);
+            Console.WriteLine("Happiness: " + happiness);
+        }
+    }
+
     class MainClass
     {
-        static void Main(string[] args)     // this is method called "Main". It is called when the program starts
+        static void Main(string[] args)     // this is a method called "Main". It is called when the program starts
         {
 
-            Random numberGen = new Random();
+            Animal dog = new Animal();
+            dog.Print();
 
-            int numberOfAttempts = 0;
-            int attempt = 0;
+            Console.WriteLine();
 
-            while (attempt != 6)
-            {
-                attempt = numberGen.Next(1, 7);
-                Console.WriteLine("Tom rolled: " + attempt + ".");
-                numberOfAttempts++;
-            }
+            Animal cat = new Animal("Tom", 10, 0.8f);
+            cat.Print();
 
-            Console.WriteLine("It took Tom " + numberOfAttempts + " attempts to roll a six");
+            Console.WriteLine();
+            Console.WriteLine("Num of animals: " + Animal.Count);
+
 
             Console.ReadKey();
         }

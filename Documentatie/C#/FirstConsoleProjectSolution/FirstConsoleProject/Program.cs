@@ -3,46 +3,45 @@ using System.Collections.Generic;
 
 namespace FirstConsoleProject
 {
-    enum Breed { Bulldog, Boxer, Chihuahua, Briard };
-
-    // Base class
-    class Animal
-    {
-        public string name;
-        public int age;
-        public float happiness;
-    }
-
-    // Derived class
-    class Dog: Animal
-    {
-        public Breed breed;
-
-        public Dog (string _name, int _age, float _happiness, Breed _breed)
-        {
-            name = _name;
-            age = _age;
-            happiness = _happiness;
-
-            breed = _breed;
-        }
-
-        public void Print ()
-        {
-            Console.WriteLine("Name: " + name);
-            Console.WriteLine("Age: " + age);
-            Console.WriteLine("Happiness: " + happiness);
-
-            Console.WriteLine("Breed: " + breed);
-        }
-    }
-
     class MainClass
     {
+        class Player
+        {
+            private int _health = 100;
+            public int health
+            {
+                get
+                {
+                    return _health;
+                }
+
+                set
+                {
+                    if (value <= 0)
+                    {
+                        _health = 0;
+                    } else if (value >= 100)
+                    {
+                        _health = 100;
+                    } else
+                    {
+                        _health = value;
+                    }
+                }
+            }
+            
+        }
+
         static void Main(string[] args)     // this is a method called "Main". It is called when the program starts
         {
-            Dog hulk = new Dog("Hulk", 6, 0.7f, Breed.Boxer);
-            hulk.Print();
+            Player tom = new Player();
+            Console.WriteLine(tom.health);
+            tom.health -= 200;
+            Console.WriteLine(tom.health);
+            tom.health += 400;
+            Console.WriteLine(tom.health);
+            tom.health = 50;
+            Console.WriteLine(tom.health);
 
             Console.ReadKey();
         }

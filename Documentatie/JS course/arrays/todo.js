@@ -10,5 +10,7 @@ todos.forEach(function (todo, index) {
     console.log(`${index + 1}. ${todo}`)
 })
 
-
+for (let count = 0; count < todos.length; count++) {
+    console.log(`${count + 1}. ${todos[count]}`)
+}
 

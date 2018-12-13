@@ -6,26 +6,38 @@ namespace FirstConsoleProject
     {
      
 
-        static void Main(string[] args)     // this is a method called "Main". It is called when the program starts
+        public static void Main(string[] args)
         {
-            Console.WriteLine(Utility.CompareValues("hello", "world"));
-            Console.WriteLine(Utility.CompareTypes("hello", "world"));
 
-            Console.ReadKey();
+            StringToArrayOfCharacters("Protopopitericescovici");
+
         }
 
-    }
+        public static void StringToArrayOfCharacters(string name)
+        {
+            char[] characters = name.ToCharArray();
+            for (int i = 0; i < characters.Length; i++)
+            {
+                Console.WriteLine(characters[i]);
+            } 
+        }
+    }                                                               
 
-    class Utility
+    class StringToArrayWithPositionM
     {
-        public static bool CompareValues<T01, T02> (T01 value01, T02 value02)
+
+        public string letter = "Bogdan";
+        public int position = 0;
+
+        public static void StringToArrayWithPositionMethod(string letter)
         {
-            return value01.Equals(value02);
+            char[] charac = letter.ToCharArray();
+            for (int position = 0; position < charac.Length; position++)
+            {
+                Console.WriteLine(position + ": " + charac[position]);
+            }
         }
 
-        public static bool CompareTypes<T01, T02>(T01 type01, T02 type02)
-        {
-            return typeof(T01).Equals(typeof(T02));
-        }
     }
+    
 }

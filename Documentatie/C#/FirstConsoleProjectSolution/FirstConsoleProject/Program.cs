@@ -5,11 +5,9 @@ namespace FirstConsoleProject
 {
     class MainClass
     {
-
         public static char[] StringToArrayOfCharacters(string name)
         {
             return name.ToCharArray();
-
         }
 
         public static List<LetterIndicator> ArrayOfObjects(char[] charArray)
@@ -27,17 +25,20 @@ namespace FirstConsoleProject
 
         public static void Main(string[] args)
         {
-
-            var firstResult = StringToArrayOfCharacters("Bogdan");
-            var secondResult = ArrayOfObjects(firstResult);
-
+            foreach (Object obj in args)
+            {
+                var firstResult = StringToArrayOfCharacters(obj.ToString());
+                var secondResult = ArrayOfObjects(firstResult);
+                foreach (var personNameLetterAndPosition in secondResult)
+                {
+                    Console.WriteLine("Letter is {0} and position is {1}", personNameLetterAndPosition.Letter, personNameLetterAndPosition.Position);
+                }
+            }
         }
-
     }
 
     class LetterIndicator
     {
-
         private string _letter;
         public string Letter
         {
@@ -51,7 +52,5 @@ namespace FirstConsoleProject
             get { return _position; }
             set { _position = value; }
         }
-
     }
-
 }

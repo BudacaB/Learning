@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace FirstConsoleProject
 {
@@ -23,14 +24,20 @@ namespace FirstConsoleProject
 
         public static void Main(string[] args)
         {
-            foreach (Object obj in args)
+            foreach (Object input in args)
             {
-                var firstResult = StringToArrayOfCharacters(obj.ToString());
+                var firstResult = StringToArrayOfCharacters(input.ToString());
                 var secondResult = ArrayOfObjects(firstResult);
+                StringBuilder builder = new StringBuilder();
                 foreach (var personNameLetterAndPosition in secondResult)
                 {
-                    Console.WriteLine("Letter is {0} and position is {1}", personNameLetterAndPosition.Letter, personNameLetterAndPosition.Position);
-                }
+                    var path = $"{Environment.CurrentDirectory}/{ input }.txt";
+                    //StringBuilder path = new StringBuilder();
+                    //path.Append(Environment.CurrentDirectory).Append("/").Append(input).Append(".txt");
+                    builder.Append("Letter is: ").Append(personNameLetterAndPosition.Letter).Append(" and position is: ").Append(personNameLetterAndPosition.Position).Append(Environment.NewLine);
+                    System.IO.File.WriteAllText(path, builder.ToString());
+                    //System.IO.File.WriteAllText(path.ToString(), builder.ToString());
+                };
             }
         }
     }

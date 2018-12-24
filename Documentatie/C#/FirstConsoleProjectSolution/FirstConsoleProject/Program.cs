@@ -31,10 +31,16 @@ namespace FirstConsoleProject
                 StringBuilder builder = new StringBuilder();
                 foreach (var personNameLetterAndPosition in secondResult)
                 {
-                    var path = $"{Environment.CurrentDirectory}/{ input }.txt";
+                    var fileName = $"{input}_on_{Environment.UserName}";
+                    var path = $"{Environment.CurrentDirectory}/{ fileName }.txt";
                     //StringBuilder path = new StringBuilder();
                     //path.Append(Environment.CurrentDirectory).Append("/").Append(input).Append(".txt");
-                    builder.Append("Letter is: ").Append(personNameLetterAndPosition.Letter).Append(" and position is: ").Append(personNameLetterAndPosition.Position).Append(Environment.NewLine);
+                    builder
+                        .Append("Letter is: ")
+                        .Append(personNameLetterAndPosition.Letter)
+                        .Append(" and position is: ")
+                        .Append(personNameLetterAndPosition.Position)
+                        .Append(Environment.NewLine);
                     System.IO.File.WriteAllText(path, builder.ToString());
                     //System.IO.File.WriteAllText(path.ToString(), builder.ToString());
                 };

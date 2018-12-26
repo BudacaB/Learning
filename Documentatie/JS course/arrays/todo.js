@@ -29,5 +29,13 @@ const deleteTodo = function (todos, todoTitle){
     })
 }
 
-deleteTodo(todos, 'workout')
-console.log(todos)
+const getThingsToDo = function(todos) {
+    return todos.filter(function(todo) {
+        return !todo.completed
+    })
+}
+
+console.log(getThingsToDo(todos))
+
+// deleteTodo(todos, 'workout')
+// console.log(todos)

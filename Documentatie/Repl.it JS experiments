@@ -1,0 +1,46 @@
+let defaultCars = [
+  {
+    id: 1,
+    chassis: true
+  },
+  {
+    id: 2,
+    chassis: true
+  },
+  {
+    id: 3,
+    chassis: true
+  }
+]
+
+// The paints dept
+/*
+for (var i=0; i < defaultCars.length; i++) {
+  defaultCars[i].color = 'green';
+}
+
+
+*/
+
+// Map array to a transform function
+
+let addPaint = currentCar => {
+  currentCar.color = 'green';
+  return currentCar
+}
+let addInfotainment = currentCar => {
+  currentCar.radio = true;
+  return currentCar
+}
+
+let transformedCars = defaultCars
+  .map(addPaint) //predicate method
+  .map(addInfotainment)
+
+let myCondition = currentCar => currentCar.color === 'green';
+
+console.log(
+  transformedCars
+  //.map(currentCar => currentCar)
+  .filter(myCondition)
+)

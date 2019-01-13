@@ -34,7 +34,7 @@ let addInfotainment = currentCar => {
 }
 
 let transformedCars = defaultCars
-  .map(addPaint) //predicate method
+  .map(addPaint) 
   .map(addInfotainment)
 
 let myCondition = currentCar => currentCar.color === 'green';
@@ -42,5 +42,5 @@ let myCondition = currentCar => currentCar.color === 'green';
 console.log(
   transformedCars
   //.map(currentCar => currentCar)
-  .filter(myCondition)
+  .filter(myCondition) //predicate method
 )

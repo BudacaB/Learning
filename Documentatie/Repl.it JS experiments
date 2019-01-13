@@ -42,5 +42,5 @@ let myCondition = currentCar => currentCar.color === 'green';
 console.log(
   transformedCars
   //.map(currentCar => currentCar)
-  .filter(myCondition) //predicate method
+  .filter(myCondition) //predicate method (returns bool)
 )

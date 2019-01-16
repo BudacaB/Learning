@@ -1,0 +1,60 @@
+/* Simple CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+body {
+    padding: 40px;
+    font-family: Georgia, Times, serif;
+    color: #353535;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 10px 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 3em; /* 3x the base font size (which is 16px in our case) */
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+    letter-spacing: -1px; /* Can be 'normal' or a value*/
+    word-spacing: 10px; /* Can be 'normal' or a value*/
+    text-align: center; /* Can be 'left', 'center', 'right' or 'justify' */
+}
+
+blockquote {
+    margin: 0 0 0 30px;
+    font-style: italic; /* Can be 'normal' or 'italic' */
+    text-indent: 80px;
+    line-height: 1.3;
+}
+
+span {
+    text-decoration: line-through;
+}
+
+em {
+    text-transform: capitalize;
+}
+
+strong {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+a {
+    color: #3ca;
+    text-decoration: none;
+}
+

@@ -41,10 +41,15 @@ Clasa vehicul
 	- volan
 
 - Actiuni
-	- deplasare terestra inainte
-	- deplasare terestra inapoi
-	- claxonat
-	- iluminare
+	- De functionare
+		- Pornire
+		- Oprire
+	- De miscare
+		- deplasare terestra inainte
+		- deplasare terestra inapoi
+	- De semnalizare
+		- claxonat
+		- iluminare
 
 2. Tanc
 - Proprietati
@@ -62,27 +67,39 @@ Clasa vehicul
 	- combustibil
 
 - Actiuni
-	- tragere
-	- deplasare terestra inainte
-	- deplasare terestra inapoi
-	- iluminare
+	- De functionare
+		- Pornire
+		- Oprire
+	- De miscare
+		- deplasare terestra inainte
+		- deplasare terestra inapoi
+	- De semnalizare
+		- iluminare
+		- radio
+	- Ofensive
+		- tragere proiectil
+		- tragere gloante
+
 
 Comun 1 cu 2:
 - Proprietati
-	Echipamente
+	- Echipamente
 		- scaune
 		- centuri
 		- faruri
 		- motor
 		- combustibil
 		- volan
-	Manevrabilitate
+	- Manevrabilitate
 		- ghidare
 - Actiuni
-	Miscare
+	- De functionare
+		- Pornire
+		- Oprire
+	- Miscare
 		- deplasare terestra inainte
 		- deplasare terestra inapoi
-	Iluminare
+	- Semnalizare
 		- iluminare
 
 ----------
@@ -101,14 +118,21 @@ Avion
 	- mansa
 
 - Actiuni
-	- deplasare aeriana
-	- deplasare terestra
-	- decolare
-	- aterizarea
+	- De functionare
+		- Pornire
+		- Oprire
+	- De miscare terestra
+		- deplasare terestra inainte
+		- deplasare terestra inapoi
+	- De miscare aeriana
+		- decolare
+		- aterizare
+		- deplasare aeriana
+		- navigare aeriana
 
 Comun A cu B
 - Proprietati
-	Echipamente
+	- Echipamente
 		- scaune
 		- centuri
 		- faruri
@@ -116,10 +140,13 @@ Comun A cu B
 		- motor
 
 - Actiuni
-	Deplasare
+	- De functionare
+		- Pornire
+		- Oprire
+	- Deplasare
 		- deplasare terestra inainte
 		- deplasare terestra inapoi
-	Iluminare
+	- Semnalizare
 		- iluminare
 
 ==============================
@@ -137,11 +164,13 @@ Clasa aparate electrice <- C. Electronice
 	- mouse
 
 Actiuni
-	- pornire
-	- oprire
-	- afisare
-	- calculare
-	- redare sunet
+	- De functionare
+		- pornire
+		- oprire
+	- De uz
+		- afisare
+		- calculare
+		- redare sunet
 
 2. Clasa TV
 - Proprietati
@@ -152,24 +181,26 @@ Actiuni
 	- antena
 
 - Actiuni
-	- pornire
-	- oprire
-	- afisare
-	- redare sunet
-	- captare semnal TV
+	- De functionare
+		- pornire
+		- oprire
+	- De uz
+		- afisare
+		- redare sunet
+		- captare semnal TV
 
 Comun 1 cu 2
 - Proprietati
-	Componente
+	- Componente
 		- ecran
 		- cablu alimentare
 		- butoane
 
 - Actiuni
-	Emisii
+	- Emisii
 		- redare sunet
 		- afisare
-	Functionalitate
+	- Functionare
 		- pornire
 		- oprire
 
@@ -187,13 +218,15 @@ Clasa aparate electrice <- D. Electrocasnice
 	- sertar
 
 - Actiuni
-	- pornire
-	- oprire
-	- spalare
-	- centrifugare
-	- alimentare apa
-	- evacuare apa
-	- uscare
+	- De functionare
+		- pornire
+		- oprire
+	- De uz
+		- spalare
+		- centrifugare
+		- alimentare apa
+		- evacuare apa
+		- uscare
 
 2. Frigider
 - Proprietati
@@ -205,11 +238,13 @@ Clasa aparate electrice <- D. Electrocasnice
 	- freon
 
 - Actiuni
-	- pornire
-	- oprire
-	- racire
-	- inghetare
-	- depozitare
+	- De functionare
+		- pornire
+		- oprire
+	- De uz
+		- racire
+		- inghetare
+		- depozitare
 
 Comun 1 cu 2
 - Proprietati
@@ -249,16 +284,20 @@ Clasa animale <- E. Mamifere
 	- coada
 
 - Actiuni
-	- deplasare bipeda
-	- deplasare in 4 labe
-	- hibernare
-	- vanatoare
-	- urcare in copaci
-	- inot
-	- consum omnivor
-	- mormarie
-	- excretie
-	- naparlire
+	- Miscare
+		- deplasare bipeda
+		- deplasare in 4 labe
+		- urcare in copaci
+		- inot
+	- Fiziologice
+		- consum omnivor
+		- excretie
+		- naparlire
+		- hibernare
+	- Activitati
+		- vanatoare
+		- mormarit
+
 
 2. Zimbru
 - Proprietati
@@ -271,11 +310,14 @@ Clasa animale <- E. Mamifere
 	- coarne
 
 - Actiuni
-	- deplasare in 4 labe
-	- consum ierbivor
-	- muge
-	- excretie
-	- naparlire
+	- Activitati
+		- deplasare in 4 labe
+		- muge
+		- rumegare
+	- Fiziologice
+		- consum ierbivor
+		- excretie
+		- naparlire
 
 Comun 1 cu 2
 - Proprietati
@@ -308,12 +350,14 @@ Clasa animale <- F. Reptile
 	- sange rece
 
 - Actiuni
-	- deplasare pe membre
-	- inot
-	- depunere oua
-	- vanare prin miros
-	- inecare prada
-	- excretie
+	- Miscare
+		- deplasare pe membre
+		- rasucire/inecare prada
+		- inot
+	- Fiziologice
+		- depunere oua
+		- vanare prin miros
+		- excretie
 
 2. Sarpe
 - Proprietati
@@ -325,13 +369,15 @@ Clasa animale <- F. Reptile
 	- venin
 
 - Aciuni
-	- deplasare taras
-	- inot
-	- depunere oua
-	- vanare prin detectie termala
-	- otravire
-	- excretie
-
+	- Miscare
+		- deplasare taras
+		- inot
+	- Fiziologice
+		- depunere oua
+		- vanare prin detectie termala
+		- otravire
+		- excretie
+	
 Comun 1 cu 2
 - Proprietati
 	- Organe simt

@@ -1,3 +1,5 @@
+Change in DB
+
 Gen ai in DB un table Player, cu doua coloane: FirstName, Lastname
 Si codezi appu incat sa citeasca coloanele amandoua. cand modifici o chestie, trb sa o faci "gracefully" incat sa nu crashuiesti vechiul cod
 Gen, sa zicem ca atunci cand creezi un nou Player ai acele doua campuri obligatorii, ca trb sa ii stii nume si prenume
@@ -22,3 +24,20 @@ But that used to take a full day. nowadays, de cand cu cloud computing, se poate
 6) press the switch in the "feature toggle" mechanism to notify frontend that feature was deployed. users dont feel a thing, they will be instantly redirected to Database B ,when creating new players on "create player" page
 7) now oyu have unnecesary code leftovers in frontend , acel toggle mechanism nu mai e necesar , since you got a new DB now - clean the code in frontend that makes this switch, redeploy frontend
 8) remove the old DB in the cloud
+
+=======================================================
+
+internal
+The type or member can be accessed by any code in the same assembly
+
+Same assembly?
+
+------
+
+static
+Use the static modifier to declare a static member, which belongs to the type itself rather than to a specific object
+
+Belongs to type rather than object, what does that mean?
+
+
+========================================================

@@ -32,6 +32,9 @@ The type or member can be accessed by any code in the same assembly
 
 Same assembly?
 
+Acelasi dll file
+Your visual sthdio solution file can contain multiple projects
+
 ------
 
 static

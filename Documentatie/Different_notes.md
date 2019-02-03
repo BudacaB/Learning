@@ -53,6 +53,6 @@ SOLID Programming Priciples:
 4. I: Interface Segregation Principle (ISP)
 5. D: Dependency Inversion Principle (DIP)
 
-ISP - https://www.youtube.com/watch?v=y1JiMGP51NE&index=4&list=PLLWMQd6PeGY3ob0Ga6vn1czFZfW6e-FLr
+ISP - https://www.youtube.com/playlist?list=PLLWMQd6PeGY3ob0Ga6vn1czFZfW6e-FLr
 
 =========================================================

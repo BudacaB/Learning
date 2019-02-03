@@ -40,7 +40,7 @@ Your visual sthdio solution file can contain multiple projects
 static
 Use the static modifier to declare a static member, which belongs to the type itself rather than to a specific object
 
-Belongs to type rather than object, what does that mean?
+Belongs to type rather than object, what does that mean? -> not needed to create object / instantiate class - can run its method directly
 
 
 ========================================================

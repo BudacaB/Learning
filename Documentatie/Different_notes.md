@@ -47,10 +47,12 @@ Belongs to type rather than object, what does that mean? -> not needed to create
 
 SOLID Programming Priciples:
 
-S: Single Responsibility Principle (SRP)
-O: Open closed Principle (OSP)
-L: Liskov substitution Principle (LSP)
-I: Interface Segregation Principle (ISP)
-D: Dependency Inversion Principle (DIP)
+1. S: Single Responsibility Principle (SRP)
+2. O: Open closed Principle (OSP)
+3. L: Liskov substitution Principle (LSP)
+4. I: Interface Segregation Principle (ISP)
+5. D: Dependency Inversion Principle (DIP)
+
+ISP - https://www.youtube.com/watch?v=y1JiMGP51NE&index=4&list=PLLWMQd6PeGY3ob0Ga6vn1czFZfW6e-FLr
 
 =========================================================

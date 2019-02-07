@@ -30,7 +30,9 @@ const renderTodos = function (todos, filters) {
     })
 
     // filteredTodos = filteredTodos.filter(function (todo) {
+    // 1.
     //     return !filters.hideCompleted || !todo.completed
+    // 2.
     //     if (filters.hideCompleted) {
     //         return !todo.completed
     //     } else {

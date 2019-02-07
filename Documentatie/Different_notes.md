@@ -56,3 +56,25 @@ SOLID Programming Priciples:
 ISP - https://www.youtube.com/playlist?list=PLLWMQd6PeGY3ob0Ga6vn1czFZfW6e-FLr
 
 =========================================================
+
+so that when you initialize it cu cuvantul new Blabla(), all that needs to happen for it towork, is that Blabla implementeaza acea interface directly , or the interface that it implements la randu ei implementeaza interfata specificata in proprietatea currentWeapon
+
+exemplu:
+
+public IBlade currentWeapon
+
+poti pune obiecte sharp in currentWEpaon, adica: currentWeapon = new Knife(), sau new Machete() , new Katana() etc etc
+
+daca ai :
+public IGun currentWeapon
+
+poti zice currentWeapon= new Gun(), sau new MachineGun(), etc etc
+
+dar daca spui 
+public IWeapon currentWeapon; (adica interfata cea mai generala posibila, pe care si IBlade , si IGun o implementeaza)
+
+atunci poti asigna lu currentWeeapon literally orice:
+
+currentWeapon = new Knife(), new Katana(), new Pistol(), etcetc
+
+============================================================

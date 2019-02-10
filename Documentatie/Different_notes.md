@@ -78,3 +78,30 @@ atunci poti asigna lu currentWeeapon literally orice:
 currentWeapon = new Knife(), new Katana(), new Pistol(), etcetc
 
 ============================================================
+
+class library -> dll -> not exe - reused as needed
+
+virtual -> subclasses can extend this method (and override)
+override -> overrides method or property from base class
+
+Sometimes you need a base class from which to extract multiple things - default behaviour
+
+1st ONE class extended, then interface(s) implemented
+
+============================================================
+
+All code written with C# -> part of .Net framework
+
+Serialization - C# object -> JSON formatted text
+Deserialization - JSON formatted text -> C# object
+
+-----------------------------------------------------------
+1. By default C# sends objects as XML to FE and we need JSON
+	Hence we must transfrom the objects to JSON through 'serialization'
+	The reverse of serialization, turning JSON into C# objects, is called 'deserialization'
+
+	Newtonsoft.Json library is used for JSON serialization
+
+2. You can override the ToString() method for your class
+
+============================================================

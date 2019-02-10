@@ -105,3 +105,7 @@ Deserialization - JSON formatted text -> C# object
 2. You can override the ToString() method for your class
 
 ============================================================
+
+ngClass -> toggles class based on condition
+
+============================================================

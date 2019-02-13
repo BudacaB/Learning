@@ -1,19 +1,14 @@
-const todos = [{
-    title: 'Workout',
-    completed: true
-    }, {
-    title: 'Brush teeth',
-    completed: true
-    }, {
-    title: 'Learn German',
-    completed: true
-    }, {
-    title: 'Learn to code',
-    completed: false
-    }, {
-    title: 'Do dishes',
-    completed: false
-}]
+// 1. Delete dummy data
+// 2. Read and parse the data when the app starts up
+// 3. Stringify and write the data when new data is added
+
+let todos = []
+
+const todosJSON = localStorage.getItem('todos')
+
+if (todosJSON !== null) {
+    todos = JSON.parse(todosJSON)
+}
 
 const filters = {
     searchText: '',
@@ -52,7 +47,14 @@ const renderTodos = function (todos, filters) {
     
     filteredTodos.forEach(function (todo) {
         const newParagraph = document.createElement('p')
-        newParagraph.textContent = todo.title
+
+        if (todo.title.length > 0){
+            newParagraph.textContent = todo.title
+        } else {
+            newParagraph.textContent = 'Unnamed todo'
+        }
+
+        
         document.querySelector('#todos').appendChild(newParagraph)
     })
 }
@@ -70,6 +72,7 @@ document.querySelector('#todo-form').addEventListener('submit', function(e) {
         title: e.target.elements.todoName.value,
         completed: false
     })
+    localStorage.setItem('todos', JSON.stringify(todos))
     e.target.elements.todoName.value = ''
     renderTodos(todos, filters)
 })

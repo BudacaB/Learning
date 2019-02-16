@@ -1,14 +1,4 @@
-// 1. Delete dummy data
-// 2. Read and parse the data when the app starts up
-// 3. Stringify and write the data when new data is added
-
-let todos = []
-
-const todosJSON = localStorage.getItem('todos')
-
-if (todosJSON !== null) {
-    todos = JSON.parse(todosJSON)
-}
+let todos = getSavedTodos()
 
 const filters = {
     searchText: '',
@@ -81,3 +71,4 @@ document.querySelector('#hide-completed').addEventListener('change', function(e)
     filters.hideCompleted = e.target.checked
     renderTodos(todos, filters)
 })
+

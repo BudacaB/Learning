@@ -5,7 +5,7 @@ const filters = {
     hideCompleted: false
 }
 
-const renderTodos = function (todos, filters) {
+/* const renderTodos = function (todos, filters) {
 
     const filteredTodos = todos.filter(function (todo) {
         const searchTextMatch = todo.title.toLowerCase().includes(filters.searchText.toLowerCase())
@@ -47,7 +47,7 @@ const renderTodos = function (todos, filters) {
         
         document.querySelector('#todos').appendChild(newParagraph)
     })
-}
+} */
 
 renderTodos(todos, filters)
 
@@ -62,7 +62,8 @@ document.querySelector('#todo-form').addEventListener('submit', function(e) {
         title: e.target.elements.todoName.value,
         completed: false
     })
-    localStorage.setItem('todos', JSON.stringify(todos))
+    //localStorage.setItem('todos', JSON.stringify(todos))
+    saveTodos()
     e.target.elements.todoName.value = ''
     renderTodos(todos, filters)
 })

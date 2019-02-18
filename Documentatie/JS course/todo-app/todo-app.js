@@ -63,7 +63,7 @@ document.querySelector('#todo-form').addEventListener('submit', function(e) {
         completed: false
     })
     //localStorage.setItem('todos', JSON.stringify(todos))
-    saveTodos()
+    saveTodos(todos)
     e.target.elements.todoName.value = ''
     renderTodos(todos, filters)
 })

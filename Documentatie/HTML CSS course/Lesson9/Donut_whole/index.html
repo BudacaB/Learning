@@ -4,7 +4,16 @@
 		<title>Donut Whole | Vegan Donut Shop</title>
 		<meta name="description" content="Donut Whole is a (fictional) 
 		Vegan Donut Shop based in Sunny Southern California">
+
+		<!-- Google fonts integration -->
+		<link href="https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister|Open+Sans:400,400i,700" rel="stylesheet">
 		
+		<!-- normalize to clean up & standardize the browser default styles -->
+		<link rel="stylesheet" href="css/normalize.css">
+
+		<!-- custom CSS -->
+		<link rel="stylesheet" href="css/styles.css">
+
 		<!-- Modernizr allows HTML5 elements to work in older browsers: http://modernizr.com/ -->
 		<script src="js/modernizr.js"></script>
 	</head>
@@ -35,7 +44,7 @@
 
 		<div class="container">
 
-			<div id="whole-story">
+			<div id="whole-story" class="clearfix">
 				<h1>The <em>whole</em> story</h1>
 				<p class="lead">We want to show the world what a <strong>real
 				</strong> donut tastes like!</p>
@@ -54,7 +63,72 @@
 				</div> <!-- end best-donut -->
 			</div> <!-- end whole story -->
 
+			<hr>
+
+			<div id="news-events" class="clearfix">
+
+				<div id="articles">
+					<h2>News, Evens &amp; Such</h2>
+
+					<article class="news">
+						<header>
+							<h3>Dairy Free Donuts</h3>
+							<time datetime="2019-02-24">February 24, 2019</time>
+						</header>
+
+						<section class="excerpt">
+							<p> Leo vel fringilla est ullamcorper eget nulla facilisi etiam dignissim. 
+								Leo in vitae turpis massa sed elementum tempus egestas sed.
+								<a href="">Read more &rarr;</a></p>
+						</section>
+
+						<footer>
+							Posted under <a href="">News</a>
+						</footer>
+					</article>
+
+					<article class="event">
+							<header>
+								<h3>Vegan Donut Workshop</h3>
+								<time datetime="2019-03-24">March 24, 2019</time>
+							</header>
+	
+							<section class="excerpt">
+								<p> Leo vel fringilla est ullamcorper eget nulla facilisi etiam dignissim. 
+									Leo in vitae turpis massa sed elementum tempus egestas sed.
+									<a href="">Read more &rarr;</a></p>
+							</section>
+	
+							<footer>
+								Posted under <a href="">Events</a>
+							</footer>
+						</article>
+				</div><!-- end articles -->
+
+				<div id="feature-image">
+					<img src="images/assorted-donuts.png" alt="Tasty Assorted Donuts">
+				</div>
+
+			</div><!-- end news-events -->
+
+			<hr>
+
 		</div> <!-- end container -->
+
+		<footer class="main">
+			<div class="container" class="clearfix">
+
+				<div id="uncopyright">
+					<p>Uncopyright &copy; 2019 <strong>Bogdan B</strong></p>
+					<p>Please recycle this code responsibly</p>
+				</div><!-- end uncopyright -->
+
+				<div id="credits">
+					<p>Sustainibly coded with love by <a href="http://www.bogdanbudaca.com">Bogdan</a></p>
+				</div>
+
+			</div><!-- end container -->
+		</footer>
 
 	</body>
 </html>

@@ -41,28 +41,31 @@ const renderTodos = function (todos, filters) {
     })
 }
 
-// 1. Setup a root div
-// 2. Setup and append a checkout (set type attribute)
-// someNode.setAttribute('type', 'checkbox')
-// 3. Setup and append a span (set text)
-// 4. Setup and append a button (set text)
-
-
-
 // Get the DOM elements for an individual note
 // generateTodoDOM
 
 const generateTodoDOM = function(todo) {
-    const newParagraph = document.createElement('p')
-    if (todo.title.length > 0) {
-        newParagraph.textContent = todo.title
-        return newParagraph
-    } else {
-        newParagraph.textContent = 'Unnamed todo'
-        return newParagraph
-    }
-}
+    const todoEl = document.createElement('div')
+    const textEl = document.createElement('span')
+    const checkout = document.createElement('input')
+    const button = document.createElement('button')
 
+    checkout.type = 'checkbox'
+    todoEl.appendChild(checkout)
+
+    button.textContent = 'x'
+    textEl.appendChild(button)
+
+    if (todo.title.length > 0) {
+        textEl.textContent = todo.title
+    } else {
+        textEl.textContent = 'Unnamed todo'
+    }
+
+    todoEl.appendChild(textEl)
+    textEl.appendChild(button)
+    return todoEl
+}
 
 // Get the DOM elements for list summary
 // generateSummaryDOM

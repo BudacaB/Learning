@@ -23,10 +23,10 @@ const saveTodos = function(todos) {
 const renderTodos = function (todos, filters) {
 
     const filteredTodos = todos.filter(function (todo) {
-        const searchTextMatch = todo.title.toLowerCase().includes(filters.searchText.toLowerCase())
-        const hideCompletedMatch = !filters.hideCompleted || !todo.completed
+        const searchTextMatch = todo.title.toLowerCase().includes(filters.searchText.toLowerCase());
+        const hideCompletedMatch = !filters.hideCompleted || !todo.completed;
 
-        return searchTextMatch && hideCompletedMatch
+        return searchTextMatch && hideCompletedMatch;
     })
 
     const incompleteTodos = filteredTodos.filter(function (todo) {
@@ -40,6 +40,14 @@ const renderTodos = function (todos, filters) {
         document.querySelector('#todos').appendChild(generateTodoDOM(todo))
     })
 }
+
+// 1. Setup a root div
+// 2. Setup and append a checkout (set type attribute)
+// someNode.setAttribute('type', 'checkbox')
+// 3. Setup and append a span (set text)
+// 4. Setup and append a button (set text)
+
+
 
 // Get the DOM elements for an individual note
 // generateTodoDOM

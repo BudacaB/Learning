@@ -59,6 +59,7 @@ document.querySelector('#search-text').addEventListener('input', function(e) {
 document.querySelector('#todo-form').addEventListener('submit', function(e) {
     e.preventDefault()
     todos.push({
+        uuid: uuidv4(),
         title: e.target.elements.todoName.value,
         completed: false
     })

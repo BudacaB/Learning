@@ -1,3 +1,11 @@
+// 1. Add event handler to checkbox
+// 2. Modify the corrent objects completed property -> toggleTodo
+// 3. Save and rerender
+
+//1. Wire up the button event
+//2. Remove todo by id
+//3. Save and rerender the todos list
+
 // Fetch existing todos from localStorage
 // getSavedTodos
 
@@ -52,7 +60,8 @@ const generateTodoDOM = function(todo) {
 
     checkout.type = 'checkbox'
     todoEl.appendChild(checkout)
-
+    //checkout.checked = todo.completed
+    
     button.textContent = 'x'
     textEl.appendChild(button)
 

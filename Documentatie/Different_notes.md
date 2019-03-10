@@ -106,6 +106,22 @@ Deserialization - JSON formatted text -> C# object
 
 ============================================================
 
+Docker 
+
+- VM for system needed for a service
+- For example push backend docker image to AWS
+
+Docker CLI commands:
+
+- docker pull -> fetches an image from docker hub
+- docker images -a > lists all local images
+- docker run -p 8000:8000 amazon/dynamodb-local -> launches connection to DB server
+- docker container list - > lists containers on which local images are running
+
+- aws dynamodb list-tables --endpoint-url http://localhost:8000 -> lists DB tables
+
+=============================================================
+
 ngClass -> toggles class based on condition
 
 ============================================================

@@ -125,3 +125,13 @@ Docker CLI commands:
 ngClass -> toggles class based on condition
 
 ============================================================
+
+AWS S3 CLI commands
+
+aws s3 rm s3://bogdanbudaca.com/ --recursive
+
+aws s3 sync . s3://bogdanbudaca.com/ --acl public-read
+
+aws s3 cp MyFirstSite s3://bogdanbudaca.com/ --recursive --acl public-read
+
+=============================================================

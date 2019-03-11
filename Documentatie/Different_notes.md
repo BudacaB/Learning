@@ -135,3 +135,12 @@ aws s3 sync . s3://bogdanbudaca.com/ --acl public-read
 aws s3 cp MyFirstSite s3://bogdanbudaca.com/ --recursive --acl public-read
 
 =============================================================
+
+https://hub.docker.com/r/aaronshaf/dynamodb-admin/
+
+1) start the dynamodb docker image cu docker run
+2) docker pull aia de mai sus
+3) configure cum scfie acolo cu endpointu de dynamodb local (localhost:8000 or whatv)
+4) run gui, goto browser
+
+==============================================================

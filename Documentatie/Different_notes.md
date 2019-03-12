@@ -144,3 +144,13 @@ https://hub.docker.com/r/aaronshaf/dynamodb-admin/
 4) run gui, goto browser
 
 ==============================================================
+
+SQL DB
+	- tables - rows are values / columns are attributes
+	- vertically scalable - add new resources
+
+NoSQL DB
+	- key -> value pairs
+	- horizontally scalable - add new machines
+	
+==============================================================

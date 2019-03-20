@@ -15,17 +15,17 @@ const todos = [{
     completed: false
 }]
 
-// 1. Setup a div contain for todos
-// 2. Setup filters (searchText) and wire up a new filter input to change it
-// 3. Create a renderTodos function to render and rerender the latest filtered data
-
 const filters = {
-    searchText: ''
+    searchText: '',
+    checked: false
 }
 
 const renderTodos = function(todos, filters) {
     const filteredTodos = todos.filter(function(todo) {
-        return todo.title.toLowerCase().includes(filters.searchText.toLowerCase())
+        const searchMatch = todo.title.toLowerCase().includes(filters.searchText.toLowerCase());
+        const hideCompleted = !filters.checked || !todo.completed
+
+        return searchMatch && hideCompleted
     })
 
     const incompleteTodos = filteredTodos.filter(function(todo) {
@@ -59,4 +59,9 @@ document.querySelector("#todo-form").addEventListener('submit', function(e) {
     })
     renderTodos(todos, filters)
     e.target.elements.addTodo.value = '';
+})
+
+document.querySelector('#hide-completed').addEventListener('change', function(e){
+    filters.checked = e.target.checked
+    renderTodos(todos, filters)
 })

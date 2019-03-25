@@ -15,7 +15,7 @@ const renderTodos = function(todos, filters) {
     const filteredTodos = todos.filter(function(todo) {
         const searchMatch = todo.title.toLowerCase().includes(filters.searchText.toLowerCase());
         const hideCompleted = !filters.checked || !todo.completed
-
+        debugger
         return searchMatch && hideCompleted
     })
 
@@ -30,6 +30,8 @@ const renderTodos = function(todos, filters) {
         document.querySelector('#todos').appendChild(generateTodoDOM(todo))
     })
 }
+
+
 
 const generateTodoDOM = function(todo) {
     const addTodo = document.createElement('p')

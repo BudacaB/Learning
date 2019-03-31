@@ -15,7 +15,6 @@ const renderTodos = function(todos, filters) {
     const filteredTodos = todos.filter(function(todo) {
         const searchMatch = todo.title.toLowerCase().includes(filters.searchText.toLowerCase());
         const hideCompleted = !filters.checked || !todo.completed
-        debugger
         return searchMatch && hideCompleted
     })
 
@@ -34,14 +33,27 @@ const renderTodos = function(todos, filters) {
 
 
 const generateTodoDOM = function(todo) {
-    const addTodo = document.createElement('p')
+    const todoEl = document.createElement('div')
 
+    const checkbox = document.createElement('input')
+    checkbox.setAttribute('type', 'checkbox')
+    
+    const textEl = document.createElement('span')
+    const button = document.createElement('button')
+    button.textContent = 'x'
+    todoEl.appendChild(checkbox)
+    
         if(todo.title.length > 0) {
-            addTodo.textContent = todo.title
+            textEl.textContent = todo.title
         } else {
-            addTodo.textContent = 'Unnamed todo'
+            textEl.textContent = 'Unnamed todo'
         }
-        return addTodo
+
+        todoEl.appendChild(textEl)
+        todoEl.appendChild(button)
+
+        return todoEl
+        
 }
 
 const generateSummaryDOM = function(incompleteTodos) {

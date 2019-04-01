@@ -11,6 +11,15 @@ const saveTodos = function(todos) {
     localStorage.setItem('todos', JSON.stringify(todos))
 }
 
+const removeTodo = function(id) {
+    const todoIndex = todos.findIndex(function(todo) {
+        return todo.id === id
+    })
+    if(todoIndex > -1) {
+        todos.splice(todoIndex, 1)
+    }
+}
+
 const renderTodos = function(todos, filters) {
     const filteredTodos = todos.filter(function(todo) {
         const searchMatch = todo.title.toLowerCase().includes(filters.searchText.toLowerCase());
@@ -30,8 +39,6 @@ const renderTodos = function(todos, filters) {
     })
 }
 
-
-
 const generateTodoDOM = function(todo) {
     const todoEl = document.createElement('div')
 
@@ -41,6 +48,12 @@ const generateTodoDOM = function(todo) {
     const textEl = document.createElement('span')
     const button = document.createElement('button')
     button.textContent = 'x'
+    button.addEventListener('click', function() {
+        removeTodo(todo.id)
+        saveTodos(todos)
+        renderTodos(todos, filters)
+    })
+
     todoEl.appendChild(checkbox)
     
         if(todo.title.length > 0) {

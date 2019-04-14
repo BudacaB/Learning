@@ -154,3 +154,11 @@ NoSQL DB
 	- horizontally scalable - add new machines
 	
 ==============================================================
+
+LINQ
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/	
+
+Lodash - Linq equivalent for JS
+https://lodash.com/docs/
+
+==============================================================

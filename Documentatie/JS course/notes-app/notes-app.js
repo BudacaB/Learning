@@ -32,3 +32,26 @@ window.addEventListener('storage', function(e) {
         renderNotes(notes, filters)
     }
 })
+
+// Unix Epic - January 1st 1970 00:00:00
+const now = new Date('January 21 2018 6:25:01')
+const timestamp = now.getTime()
+
+const myDate = new Date(timestamp)
+console.log(myDate.getFullYear())
+
+// console.log(`Year: ${now.getFullYear()}`)
+// console.log(`Month: ${now.getMonth()}`)
+// console.log(`Day of month: ${now.getDate()}`)
+// console.log(`Minute: ${now.getMinutes()}`)
+// console.log(`Seconds: ${now.getSeconds()}`)
+
+
+const dateOne = new Date('January 21 2020 12:00:00')
+const dateTwo = new Date()
+
+const timestampOne = dateOne.getTime()
+const timestampTwo = dateTwo.getTime()
+
+timestampOne < timestampTwo ? console.log(dateOne.toString()) : console.log(dateTwo.toString())
+

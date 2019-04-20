@@ -33,25 +33,18 @@ window.addEventListener('storage', function(e) {
     }
 })
 
-// Unix Epic - January 1st 1970 00:00:00
-const now = new Date('January 21 2018 6:25:01')
-const timestamp = now.getTime()
 
-const myDate = new Date(timestamp)
-console.log(myDate.getFullYear())
+// const now = moment()
+// now.subtract(1, 'week').subtract(20, 'days')
+// console.log(now.format('MMMM Do, YYYY'))
+// console.log(now.fromNow())
+// const nowTimestamp = now.valueOf()
 
-// console.log(`Year: ${now.getFullYear()}`)
-// console.log(`Month: ${now.getMonth()}`)
-// console.log(`Day of month: ${now.getDate()}`)
-// console.log(`Minute: ${now.getMinutes()}`)
-// console.log(`Seconds: ${now.getSeconds()}`)
+// console.log(moment(nowTimestamp).toString())
 
 
-const dateOne = new Date('January 21 2020 12:00:00')
-const dateTwo = new Date()
-
-const timestampOne = dateOne.getTime()
-const timestampTwo = dateTwo.getTime()
-
-timestampOne < timestampTwo ? console.log(dateOne.toString()) : console.log(dateTwo.toString())
+const birthday = moment()
+//birthday.subtract(31, 'years').subtract(8, 'months').subtract(4, 'days')
+birthday.year(1987).month(7).date(17)
+console.log(birthday.format('MMM D, YYYY'))
 

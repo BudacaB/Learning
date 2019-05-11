@@ -31,7 +31,7 @@ const gradeCalc = function(studentScore, possibleScore) {
 }
 
 try {
-    const result = gradeCalc('check', 100)
+    const result = gradeCalc(9, true)
     console.log(result)
 } catch (e) {
     console.log(e.message)

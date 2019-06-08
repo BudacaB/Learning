@@ -140,7 +140,7 @@ https://hub.docker.com/r/aaronshaf/dynamodb-admin/
 
 1) start the dynamodb docker image cu docker run
 2) docker pull aia de mai sus
-3) configure cum scfie acolo cu endpointu de dynamodb local (localhost:8000 or whatv)
+3) configure cum scrie acolo cu endpointu de dynamodb local (localhost:8000 or whatv)
 4) run gui, goto browser
 
 ==============================================================
@@ -160,5 +160,10 @@ https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/
 
 Lodash - Linq equivalent for JS
 https://lodash.com/docs/
+
+==============================================================
+
+serialization - object -> json string
+deserialization - json string -> object
 
 ==============================================================

@@ -170,11 +170,17 @@ deserialization - json string -> object
 ==============================================================
 
 sudo apt -y install npm;
+
 sudo apt-get -y install gedit;
+
 sudo snap install --classic code;
+
 sudo apt -y install git;
+
 sudo apt-get -y install lib32stdc++6;
+
 sudo apt -y install awscli;
+
 sudo apt -y install xclip;
 
 ==============================================================

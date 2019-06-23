@@ -21,19 +21,34 @@ Hangman.prototype.getPuzzle = function() {
 
 Hangman.prototype.makeGuess = function(guess) {
     guess = guess.toLowerCase()
-    if (!this.guessedLetters.includes(guess)) {
-        this.guessedLetters.push(guess)
-        if (this.remainingGuesses === 0) { 
-            console.log('0 guesses left') 
-        } else if (!this.word.includes(guess)) {
-            this.remainingGuesses--
-        }
-    } else {
-        console.log('Letter has already been chosen')
-    } 
+    const isUnique = !this.guessedLetters.includes(guess);
+    const isBadGuess = !this.word.includes(guess)
 
+    if (this.status !== 'playing') {
+        return
+    }
+
+    if (isUnique) {
+        this.guessedLetters.push(guess)
+    }
+
+    if (isUnique && isBadGuess) {
+        this.remainingGuesses--
+    }
+    
     this.getStatus();
 }
+
+Hangman.prototype.returnStatusMessage = function () {
+    if (this.status === 'playing') {
+        return 'Playing -> Guesses left: ' + this.remainingGuesses
+    } else if (this.status === 'failed') {
+        return 'Failed -> Nice try! The word was ' + "'" + this.word.join('') + "'"
+    } else {
+        return 'Finished -> Great work! You guessed the word.'
+    }
+}
+
 
 Hangman.prototype.getStatus = function() {
     const finished = this.word.every((letter) => this.guessedLetters.includes(letter))

@@ -6,7 +6,7 @@ class Hangman{
     this.status = 'playing'
     }
 
-    getPuzzle() {
+    get puzzle() {
         let puzzle = []
 
         this.word.forEach((letter) => {
@@ -19,8 +19,8 @@ class Hangman{
         return puzzle
     }
 
-    returnStatusMessage() {
-        if (this.status === 'playing') {
+    get statusMessage() {
+ if (this.status === 'playing') {
             return 'Playing -> Guesses left: ' + this.remainingGuesses
         } else if (this.status === 'failed') {
             return 'Failed -> Nice try! The word was ' + "'" + this.word.join('') + "'"

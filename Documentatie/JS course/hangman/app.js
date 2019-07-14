@@ -16,43 +16,38 @@ window.addEventListener('keypress', (e) => {
     statusEl.textContent = game1.statusMessage;
 })
 
-// Making an HTTP request
-const request = new XMLHttpRequest()
-
-request.addEventListener('readystatechange', (e) => {
-     if (e.target.readyState === 4 && e.target.status === 200) {
-         const data = JSON.parse(e.target.responseText)
-         console.log(data)
-     } else if (e.target.readyState === 4) {
-         console.log('An error has taken place')
-     }
-})
-
-request.open('GET', 'http://puzzle.mead.io/puzzle?wordCount=3')
-request.send()
-
-
-const countryCode = 'RO'
-const countriesRequest = new XMLHttpRequest()
-
-countriesRequest.addEventListener('readystatechange', (e) => {
-    if (e.target.readyState === 4 && e.target.status === 200) {
-        const data = JSON.parse(e.target.responseText)
-        // course solution
-        const country = data.find((country) => country.alpha2Code === countryCode)
-        console.log(country.name)
-
-        // own solution
-        // for (let countries in data) {
-        //     let country = data[countries]
-        //     if (country.alpha2Code === countryCode) {
-        //         console.log(country.name)
-        //     }
-        // }
-    } else if (e.target.readyState === 4) {
-        console.log('Unable to fetch data')
+getPuzzle((error, puzzle) => {
+    if (error) {
+        console.log(`Error: ${error}`)
+    } else {
+        console.log(puzzle)
     }
 })
 
-countriesRequest.open('GET', 'http://restcountries.eu/rest/v2/all')
-countriesRequest.send()
+
+// Making an HTTP request
+
+// const countryCode = 'RO'
+// const countriesRequest = new XMLHttpRequest()
+
+// countriesRequest.addEventListener('readystatechange', (e) => {
+//     if (e.target.readyState === 4 && e.target.status === 200) {
+//         const data = JSON.parse(e.target.responseText)
+//         // course solution
+//         const country = data.find((country) => country.alpha2Code === countryCode)
+//         console.log(country.name)
+
+//         // own solution
+//         // for (let countries in data) {
+//         //     let country = data[countries]
+//         //     if (country.alpha2Code === countryCode) {
+//         //         console.log(country.name)
+//         //     }
+//         // }
+//     } else if (e.target.readyState === 4) {
+//         console.log('Unable to fetch data')
+//     }
+// })
+
+// countriesRequest.open('GET', 'http://restcountries.eu/rest/v2/all')
+// countriesRequest.send()

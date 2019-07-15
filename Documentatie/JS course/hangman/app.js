@@ -24,6 +24,12 @@ getPuzzle((error, puzzle) => {
     }
 })
 
+// Sync example
+// const puzzle = getPuzzleSync()
+// console.log(puzzle)
+
+// console.log('Do something else')
+
 
 // Making an HTTP request
 

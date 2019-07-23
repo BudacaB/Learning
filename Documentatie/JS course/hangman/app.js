@@ -16,28 +16,17 @@ window.addEventListener('keypress', (e) => {
     statusEl.textContent = game1.statusMessage;
 })
 
-getPuzzle('2', (error, puzzle) => {
-    if (error) {
-        console.log(`Error: ${error}`)
-    } else {
-        console.log(puzzle)
-    }
+getPuzzle('2').then((puzzle) => {
+    console.log(puzzle)
+}, (err) => {
+    console.log(`Error: ${err}`)
 })
 
-// Sync example
-// const puzzle = getPuzzleSync()
-// console.log(puzzle)
 
-// console.log('Do something else')
-
-
-
-getCountry('RO', (error, country) => {
-    if (error) {
-        console.log(`Error: ${error}`)
-    } else {
-        console.log(`Country name: ${country.name}`)
-    }
+getCountry('RO').then((country) => {
+    console.log(country.name)
+}, (err) => {
+    console.log(`Error: ${err}`)
 })
 
 

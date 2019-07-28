@@ -30,3 +30,19 @@ getCountry('RO').then((country) => {
     console.log(err)
 })
 
+
+getLocation().then((location) => {
+    console.log(`I am in country ${location.country}, city ${location.city}, region ${location.region}`)
+}).catch((err) => {
+    console.log(err)
+})
+
+
+getLocation().then((location) => {
+    return getCountry(location.country)
+}).then((country) => {
+    console.log(country.name)
+}).catch((err) => {
+    console.log(err)
+})
+

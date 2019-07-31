@@ -38,11 +38,9 @@ getLocation().then((location) => {
 })
 
 
-getLocation().then((location) => {
-    return getCountry(location.country)
-}).then((country) => {
+getCurrentCountry().then((country) => {
     console.log(country.name)
-}).catch((err) => {
-    console.log(err)
+}).catch((error) => {
+    console.log(error)
 })
 

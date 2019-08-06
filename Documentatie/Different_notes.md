@@ -197,13 +197,13 @@ Relational DB - SQL - structured query language
 
 MedicineTable
 ID_PrimaryKey	NAME     CLASS     TARGET
-1				Asp			A		ficat
-2				Para		B		raceala
-3				Algo		X		dureri
+1		Asp	   A	   ficat
+2		Para	   B	   raceala
+3		Algo	   X	   dureri
 
 InteractionsTable
 ID_PrimaryKey	FirstMedicine_ForeignKey	SecondMedicine_ForeignKey
-1					1							2
-2					3							1
+1				1				2
+2				3				1
 
 SELECT * FROM InteractionsTable WHERE FirstMedicine='Med2' OR SecondMedicine='Med2' (query language)

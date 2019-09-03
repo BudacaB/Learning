@@ -1,5 +1,11 @@
-console.log('utilities.js')
+// Named export
+// Default export
 
-export const add = (a, b) => a + b
+const add = (a, b) => a + b
 
-export const name = 'Bog'
+const name = 'Bog'
+
+const square = (x) => x * x
+
+export { add, name, square as default }
+

@@ -3,3 +3,6 @@
 3. git branch checkout <branch_name> - changes to requested branch
 4. git push origin <branch_name> - pushes to non-master branch
 5. git pull - updates local with remote repo
+6. git push origin --delete <branch_name> -> delete branch on origin
+7. git branch -d <branch_name> -> delete branch locally
+8. git pull origin <branch_name> - pulls from non-master branch

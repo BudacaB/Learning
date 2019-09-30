@@ -1,3 +1,5 @@
+// the Rest parameter
+
 const calculateAverage = (thing, ...numbers) => {
   //return (num1 + num2) / 2;
   let sum = 0;

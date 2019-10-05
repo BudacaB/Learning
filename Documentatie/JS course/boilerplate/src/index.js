@@ -1,49 +1,28 @@
-const printTeam = (team, coach, ...players) => {
-  console.log(`Team: ${team}`);
-  console.log(`Coach: ${coach}`);
-  console.log(`Players: ${players.join(", ")}`);
+const todo = {
+  id: "fgfgf",
+  text: "pay the bills",
+  completed: false
 };
 
-const team = {
-  name: "Liberty",
-  coach: "Casey Penn",
-  players: ["Marge", "Aiden", "Herbert"]
+const printTodo = ({ text, completed }) => {
+  console.log(`${text}: ${completed}`);
 };
+printTodo(todo);
 
-printTeam(team.name, team.coach, ...team.players);
+const {
+  text: todoText,
+  completed,
+  details = "no details provided",
+  ...others
+} = todo;
 
-let cities = ["Barcelona", "Cape Town", "Bordeaux"];
-cities = [...cities, "Santiago"];
+console.log(todoText);
+console.log(completed);
+console.log(details);
+console.log(others);
 
-console.log(cities);
+const age = [65, 0, 13];
+const [firstAge, ...otherAges] = age;
 
-let house = {
-  bedrooms: 2,
-  bathrooms: 1.5,
-  year: 2017
-};
-let newHouse = {
-  basement: true,
-  bedrooms: 3,
-  ...house
-};
-
-console.log(house);
-console.log(newHouse);
-
-const person = {
-  name: "Bog",
-  age: 32
-};
-
-const location = {
-  city: "Buch",
-  country: "RO"
-};
-
-const overview = {
-  ...person,
-  ...location
-};
-
-console.log(overview);
+console.log(firstAge);
+console.log(otherAges);

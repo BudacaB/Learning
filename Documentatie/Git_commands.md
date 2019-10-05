@@ -6,3 +6,4 @@
 6. git push origin --delete <branch_name> -> delete branch on origin
 7. git branch -d <branch_name> -> delete branch locally
 8. git pull origin <branch_name> - pulls from non-master branch
+9. git merge origin/<branch_name> - update branch with master updates

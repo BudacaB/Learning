@@ -8,22 +8,23 @@ Dar uita sa schimbe in cod cand creeazi un player, sa ceara userului sa dea inpu
 Ca sa stocheze in noul camp obligatoriu
 Ce trb sa se intample aici, e ca modificarea din DB trb backwards compatible, adica trb sa fie specificat in DB ca fieldul Age sa aiba un default value 0, pt ca atunci cand vechiul cod adauga un player fara Age, sa fie adaugat Age = 0, ca sa nu crashuiasca DB
 
-In mod normal schimbarile astea se faceau in vremurile de demult gen, 
-1) take production site down for maintenance 
-2) deploy change in Db to production
-3) deploy new code to ask user also for age on "create player" page
-4) inform users site is back up
+In mod normal schimbarile astea se faceau in vremurile de demult gen,
 
-But that used to take a full day. nowadays, de cand cu cloud computing, se poate asa, close to zero downtime for users: 
+1. take production site down for maintenance
+2. deploy change in Db to production
+3. deploy new code to ask user also for age on "create player" page
+4. inform users site is back up
 
-1) clone DB in the cloud - you got Database A has only 2 fields in the Player table, Database B has 3 fields in Player table
-2) implement code to ask for Age in frontend
-3) adaugi un "feature toggle" mechanism (un simplu if case in cod) that says : "is Age feature deployed?" if yes, go to Database B, if not then stay on database A. 
-4) deploy frontend cu acest feature toggle, users can still work with old DB
-5) deploy new DB with 3 fields in Player table
-6) press the switch in the "feature toggle" mechanism to notify frontend that feature was deployed. users dont feel a thing, they will be instantly redirected to Database B ,when creating new players on "create player" page
-7) now oyu have unnecesary code leftovers in frontend , acel toggle mechanism nu mai e necesar , since you got a new DB now - clean the code in frontend that makes this switch, redeploy frontend
-8) remove the old DB in the cloud
+But that used to take a full day. nowadays, de cand cu cloud computing, se poate asa, close to zero downtime for users:
+
+1. clone DB in the cloud - you got Database A has only 2 fields in the Player table, Database B has 3 fields in Player table
+2. implement code to ask for Age in frontend
+3. adaugi un "feature toggle" mechanism (un simplu if case in cod) that says : "is Age feature deployed?" if yes, go to Database B, if not then stay on database A.
+4. deploy frontend cu acest feature toggle, users can still work with old DB
+5. deploy new DB with 3 fields in Player table
+6. press the switch in the "feature toggle" mechanism to notify frontend that feature was deployed. users dont feel a thing, they will be instantly redirected to Database B ,when creating new players on "create player" page
+7. now oyu have unnecesary code leftovers in frontend , acel toggle mechanism nu mai e necesar , since you got a new DB now - clean the code in frontend that makes this switch, redeploy frontend
+8. remove the old DB in the cloud
 
 =======================================================
 
@@ -35,13 +36,12 @@ Same assembly?
 Acelasi dll file
 Your visual sthdio solution file can contain multiple projects
 
-------
+---
 
 static
 Use the static modifier to declare a static member, which belongs to the type itself rather than to a specific object
 
 Belongs to type rather than object, what does that mean? -> not needed to create object / instantiate class - can run its method directly
-
 
 ========================================================
 
@@ -70,7 +70,7 @@ public IGun currentWeapon
 
 poti zice currentWeapon= new Gun(), sau new MachineGun(), etc etc
 
-dar daca spui 
+dar daca spui
 public IWeapon currentWeapon; (adica interfata cea mai generala posibila, pe care si IBlade , si IGun o implementeaza)
 
 atunci poti asigna lu currentWeeapon literally orice:
@@ -95,18 +95,19 @@ All code written with C# -> part of .Net framework
 Serialization - C# object -> JSON formatted text
 Deserialization - JSON formatted text -> C# object
 
------------------------------------------------------------
-1. By default C# sends objects as XML to FE and we need JSON
-	Hence we must transfrom the objects to JSON through 'serialization'
-	The reverse of serialization, turning JSON into C# objects, is called 'deserialization'
+---
 
-	Newtonsoft.Json library is used for JSON serialization
+1. By default C# sends objects as XML to FE and we need JSON
+   Hence we must transfrom the objects to JSON through 'serialization'
+   The reverse of serialization, turning JSON into C# objects, is called 'deserialization'
+
+   Newtonsoft.Json library is used for JSON serialization
 
 2. You can override the ToString() method for your class
 
 ============================================================
 
-Docker 
+Docker
 
 - VM for system needed for a service
 - For example push backend docker image to AWS
@@ -138,25 +139,19 @@ aws s3 cp MyFirstSite s3://bogdanbudaca.com/ --recursive --acl public-read
 
 https://hub.docker.com/r/aaronshaf/dynamodb-admin/
 
-1) start the dynamodb docker image cu docker run
-2) docker pull aia de mai sus
-3) configure cum scrie acolo cu endpointu de dynamodb local (localhost:8000 or whatv)
-4) run gui, goto browser
+1. start the dynamodb docker image cu docker run
+2. docker pull aia de mai sus
+3. configure cum scrie acolo cu endpointu de dynamodb local (localhost:8000 or whatv)
+4. run gui, goto browser
 
 ==============================================================
 
-SQL DB
-	- tables - rows are values / columns are attributes
-	- vertically scalable - add new resources
+SQL DB - tables - rows are values / columns are attributes - vertically scalable - add new resources
 
-NoSQL DB
-	- key -> value pairs
-	- horizontally scalable - add new machines
-	
-==============================================================
+# NoSQL DB - key -> value pairs - horizontally scalable - add new machines
 
 LINQ
-https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/	
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/
 
 Lodash - Linq equivalent for JS
 https://lodash.com/docs/
@@ -191,27 +186,29 @@ sudo apt -y install xclip;
 
 { "name":"Algocalmin", "clasa":"X", "target":"dureri", "interactor": "Aspirina }
 
-
 Relational DB - SQL - structured query language
-
 
 MedicineTable
 
-ID_PrimaryKey	NAME     CLASS     TARGET
+ID_PrimaryKey NAME CLASS TARGET
 
-1		Asp	   A	   ficat
+1 Asp A ficat
 
-2		Para	   B	   raceala
+2 Para B raceala
 
-3		Algo	   X	   dureri
-
+3 Algo X dureri
 
 InteractionsTable
 
-ID_PrimaryKey	FirstMedicine_ForeignKey	SecondMedicine_ForeignKey
+ID_PrimaryKey FirstMedicine_ForeignKey SecondMedicine_ForeignKey
 
-1				1				2
+1 1 2
 
-2				3				1
+2 3 1
 
-SELECT * FROM InteractionsTable WHERE FirstMedicine='Med2' OR SecondMedicine='Med2' (query language)
+SELECT \* FROM InteractionsTable WHERE FirstMedicine='Med2' OR SecondMedicine='Med2' (query language)
+
+=======================================
+
+state mgmt - 'starea appului' - redux store stocheaza starea de a fi logat a unui user - centralizeaza starea tuturor obiectelor din app in one place
+check store for any state needs

@@ -210,5 +210,57 @@ SELECT \* FROM InteractionsTable WHERE FirstMedicine='Med2' OR SecondMedicine='M
 
 =======================================
 
-state mgmt - 'starea appului' - redux store stocheaza starea de a fi logat a unui user - centralizeaza starea tuturor obiectelor din app in one place
-check store for any state needs
+state mgmt - 'starea appului'
+
+- redux store stocheaza starea de a fi logat a unui user - centralizeaza starea tuturor obiectelor din app in one place
+  check store for any state needs
+
+- reducers update the state
+
+- action objects are passed to the reducers and they say 'this is what we want changed, and this is the value that we want it changed to'
+
+- reducers must be pure functions
+
+=======================================
+
+There are 3 basic uses of functions:
+
+    - mapping inputs to outputs
+
+    - procedures - a list of instructions for the PC to follow - call it how many times it's needed (procedural programming)
+
+    - I/O - network requests, UI, drawing to the screen etc.
+
+    Mapping:
+
+    	- input / arguments -> function -> output / return value
+
+    	- like in math e.g. f(x) = 2x then f(2) = 4
+
+    		- f(2) is equivalent to 4 -> this is called referential transparency (vs. opacity)
+
+    Pure function (functional programming)
+
+    	- given the same input it will always produce the same output
+
+    	- produces no side effects
+
+    	- is useful to avoid shared state and the resulting debugging
+
+    	- giveaway that a function is impure is if it makes sense to call it without using its return value
+
+    Impure function
+
+    	- relies on time for example
+
+    	- generating random numbers
+
+    	- depends on I/O - user input, disk access, network
+
+    Side effects
+
+    	- in JS objects get reference so ops inside the function change original objects
+
+    	- to avoid side effects - create a new objects from the original to work on
+
+=======================================

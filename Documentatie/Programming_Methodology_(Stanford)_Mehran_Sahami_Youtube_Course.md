@@ -735,108 +735,142 @@ E.g. ‘human’ extends ‘primate’ but implements ‘intelligence’ (‘dol
 
 ---
 
-Map
+### Map
+
 Java interface
 
 Way to associate:
 Key
 Value
 
-E.g. dictionary - key - words
-value - definitions
+E.g. dictionary
+
+- key - words
+- value - definitions
+
 Phonebook etc.
-HashMap (class) -> implements Map
+
+### HashMap (class) -> implements Map
 
 template
--> 2 types - for key and for values
 
+- 2 types - for key and for values
+
+```
 HashMap <String, String> dict = new HashMap <String, String>();
 HashMap <String, Integer> phonebook = new HashMap <String, Integer>();
+```
 
 HashMap methods:
-put (key, value) -> dict.put(key, value);
-get -> dict.get(key); -> returns value / or null
 
+- put (key, value) -> dict.put(key, value);
+- get -> dict.get(key); -> returns value / or null
+
+```
 phonebook.put (“Mehran”, 7236059);
 phonebook.put (“Jenny”, 8675309);
+```
 
+```
 Integer mNum = phonebook.get(“Mehran”);
+```
 
+```
 phonebook.remove (key);
 phonebook.containskey (key);
 phonebook.size();
+```
 
-Iterator - (this is what Map, ArrayList provide)
-List through set of values
+### Iterator - (this is what Map, ArrayList provide)
 
+- List through set of values
+
+```
 ArrayList <String> names = new ArrayList <string>(); -> order
 Iterator <Strings> it = names.iterator();
 while (it.hasNext()) {
 println (it.next());
 }
+```
 
 Hashmap -> no order
 
-GUI - Graphical User Interface
+---
 
-Buttons
-Sliders
-Checkboxes
-Radio buttons
-Combo box (dropdown)
-Text box / form
+### GUI - Graphical User Interface
+
+- Buttons
+- Sliders
+- Checkboxes
+- Radio buttons
+- Combo box (dropdown)
+- Text box / form
+
 Interactors ^
 
 ---
 
+```
 import jav.awt.event._;
 import javax.swing._;
+```
 
 All elements are -> JComponent
+
 JComponent <- Abstract Button <- JButton / JToggleButton
 
-Window regions
+### Window regions
 
 In graphics or console Program, window -> divided in 5 regions: North, South, East, West, Center
-Center -> action takes place
-Console Prog adds a console to Center
-GraphicsProgram puts a GCanvas to Center
-Other regions are visible only if you add an interactor to them
-Regions where interactors are placed -> Control Bars
 
-Button
+- Center -> action takes place
+- Console Prog adds a console to Center
+- GraphicsProgram puts a GCanvas to Center
+- Other regions are visible only if you add an interactor to them
+- Regions where interactors are placed -> Control Bars
+
+### Button
 
 JButton but = new JButton (“Hi”);
+
 (addActionlisteners();)
+
 Add (but, SOUTH);
 
 ---
 
+```
 public void init() {
-add (new JButton(“Hi”), SOUTH);
-Add Actionlisteners();
+    add (new JButton(“Hi”), SOUTH);
+    Add Actionlisteners();
 }
 
 public void actionPerformed (actionEvent) {
-string cmd = e.getActionCommand();
-if (cmd.equals (“Hi”)) {
-println(“Hello”);
+    string cmd = e.getActionCommand();
+    if (cmd.equals (“Hi”)) {
+        println(“Hello”);
+    }
 }
-}
+```
 
-Checkbox
+### Checkbox
 
+```
 JCheckbox check = new JCheckbox (“Front”);
 check.setSelected(true);
 add (check, SOUTH);
+```
 
 ---
 
 sm = new JRadioButton (“small”);
 …
 
-Combobox
+---
 
+### Combobox
+
+```
 JComboBox pick = new JComboBox(); -> up in instance variables at beginning ^
 pick.addItem (“Black”);
 … (“Blue”)’ etc
@@ -844,311 +878,402 @@ pick.addItem (“Black”);
 pick.setEditable(false);
 pick.setSelectedItem (“Black”);
 add (pick, SOUTH);
+```
 
-Text Field
+### Text Field
 
+```
 … init() {
 JTextField tf = new JTextField(10);
 tf.addActionListener(this);
 add (tf, SOUTH);
 
 public void ActionPerformed (ActionEvent e) {
-if (e.getSource == tf ) {
-println(“hi” + tf.getText())}
+    if (e.getSource == tf ) {
+    println(“hi” + tf.getText())}
+```
 
-Layout
+### Layout
 
 Border layout:
-Console
-Graphics
+
+- Console
+- Graphics
 
 GridLayout (2, 3) - 2 rows & 3 columns -> fills screen
+
 TableLayout (2, 3) -> only uses as much space needed max by the elements
 
-Component / Container
+---
+
+### Component / Container
 
 Component - anything that can appear / be displayed in a generic window - at a generic level
+
 Component <- Container <- everything else
 
 listeners for components -> resizing the window
 
+```
 public class MyProg extend Program {
-public void init() {
-MyCanvas canvas = new MyCanvas();
-add (Canvas);
-}
+    public void init() {
+        MyCanvas canvas = new MyCanvas();
+        add (Canvas);
+    }
 }
 public class MyCanvas extends GCanvas implements ComponentListener { … }
+```
+
+---
 
 HashMap <string, Album> inventory = nwe HashMap <string, Album> ();
 
-Searching and sorting - on arrays
+---
+
+### Searching and sorting - on arrays
 
 The simpler of these 2 is searching -> finding an element in an array or some other kind of sequence
-typically returns the index
-element searching for is called key
 
-Linear search -> start at the beginning of the array and look at each elem in turn - simplest
-strategy
+- typically returns the index
+- element searching for is called key
 
+### Linear search -> start at the beginning of the array and look at each elem in turn - simplest strategy
+
+```
 private int linearSearch(int key, int [] array) {
-for (int i = 0; i < array.length: i++) {
-if(key == array[i]) return i;
+    for (int i = 0; i < array.length: i++) {
+        if(key == array[i]) return i;
+    }
+    return -1;
 }
-return -1;
-}
+```
 
-Binary search
+### Binary search
 
+```
 private int binarySearch(int key) {
-int lh = 0;
-int rh = disp.length() -1;
-while (lh <= rh) {
-int mid = (lh + rh) / 2;
-if(key == disp.get(mid)) return mid;
-if(key < disp.get(mid)) {
-rh = mid - 1;
-} else {
-lh = mid + 1;
+    int lh = 0;
+    int rh = disp.length() -1;
+    while (lh <= rh) {
+        int mid = (lh + rh) / 2;
+        if(key == disp.get(mid)) return mid;
+        if(key < disp.get(mid)) {
+            rh = mid - 1;
+        } else {
+            lh = mid + 1;
+        }
+    }
 }
-}
-}
+```
 
-Efficiency - the running time of binary search also depends on the number of elem
-On each step - it rules out half of the remaining possibilities in an ordered array
-Worst case - number of steps required is equal to the number of times you can divide the original size of the array in half until there is only 1 elem remaining
-l = N / 2 / / 2 / 2 …/ 2 -> k times
-l = N / 2k -> k = log2N
+- Efficiency - the running time of binary search also depends on the number of elem
+- On each step - it rules out half of the remaining possibilities in **an ordered array**
+- Worst case - number of steps required is equal to the number of times you can divide the original size of the array in half until there is only 1 elem remaining
 
-Comparing search efficiencies
+  l = N / 2 / / 2 / 2 …/ 2 -> k times
+
+  l = N / 2k -> k = log<sub>2</sub>N
+
+### Comparing search efficiencies
 
 The difference in the number of steps required for the two search algorithms is illustrated by the following table - compares the values of N and the closest integer to log2N
 
-N
-log2N
-10
-3
-100
-7
-1000
-10
-1000000
-20
-1000000000
-30
+| N          | log<sub>2</sub>N |
+| ---------- | ---------------- |
+| 10         | 3                |
+| 100        | 7                |
+| 1000       | 10               |
+| 1000000    | 20               |
+| 1000000000 | 30               |
 
-Sorting
+### Sorting
 
 Binary search works only on arrays in which the elems are arranged in order.
-Process of puttin the elements on an array in order -> sorting
 
-Selection sort
+- Process of putting the elements on an array in order -> sorting
 
+### Selection sort
+
+```
 private void sort (int [ ] array) {
-for (int lh = 0; lh < array.length; lh++) {
-int rh = findSmallest (array, lh, array.length);
-swapElements (array, lh, rh);
+    for (int lh = 0; lh < array.length; lh++) {
+        int rh = findSmallest (array, lh, array.length);
+        swapElements (array, lh, rh);
+    }
 }
-}
+```
 
 lh -> points to each pos. in turn
+
 rh -> points to smallest value in rest of array
 
 Efficiency -> depends as well on size of array
+
 Another way to estimate the running time is to count how many ops are required to sort an array of size N.
+
 The number of ops involved in each call to findSmallest changes as the algorithm proceeds.
 
-N(N + 1) / 2 = N2 + N -> reduce small things and simplify by dropping
-Can intuitively hint speed as N2
-Double input size -> square time that it took
+N(N + 1) / ~~2~~ = N<sup>2</sup> + ~~N~~ -> reduce small things and simplify by dropping
 
-Algorithms whose running times increase in proportion to the square of the problem size are said to be quadratic
+- Can intuitively hint speed as N<sup>2</sup>
+- Double input size -> square time that it took
 
-Radix sort
+Algorithms whose running times increase in proportion to the square of the problem size are said to be **quadratic**
+
+### Radix sort
+
 Old technique - punched cards
 
-Data structures
+---
 
-Online stores use a lot of data management
-Social networks
-Web search
+### Data structures
 
-Principles
+- Online stores use a lot of data management
+- Social networks
+- Web search
 
-nouns -> classes
-verbs -> methods
+### Principles
+
+- nouns -> classes
+- verbs -> methods
 
 Data -> unique identifier -> SSN / CNP etc.
 
-Design
+### Design
 
 Collection of objects
 
-Useful methods of collection
+### Useful methods of collection
 
 Classes that implement the Collection interface, such as ArrayList or the key set of HashMap, provide the following useful methods:
-boolean add (<T> value) -> adds a specified value to the collection - returns true if the collection changes
-boolean remove (<T> value) -> removes the first instance of the element if it appears, returns true if a match is found
-void clear() -> removes all elements from the collection
-int size() -> returns the number of elements in the collection
-boolean contains (<T> value) -> returns true if the collection contains the specific value
-boolean isEmpty() -> returns true is there’s no element in the collection
-Iterator iterator() -> returns an iterator that allows the client to step through the values in the collection
+
+- boolean add (<T> value) -> adds a specified value to the collection - returns true if the collection changes
+- boolean remove (<T> value) -> removes the first instance of the element if it appears, returns true if a match is found
+- void clear() -> removes all elements from the collection
+- int size() -> returns the number of elements in the collection
+- boolean contains (<T> value) -> returns true if the collection contains the specific value
+- boolean isEmpty() -> returns true is there’s no element in the collection
+- Iterator iterator() -> returns an iterator that allows the client to step through the values in the collection
+
+---
 
 Ex. Flytunes
 
-add Songs
-add Albums
+add **Songs**
 
-Class Song
+add **Albums**
+
+### Class Song
+
 name String -> get
+
 band String -> get
+
 price double -> get + set
+
 unique identifier
 
-Class Album
+### Class Album
 
 name String
+
 band String
-list of songs - ArrayList
+
+**list of songs** - ArrayList
+
 ^
 add list (iterating)
 
+```
 ArrayList <song> songs = new ArrayList <song> ();
 HashMap <String, Album> albums = new ...
-name object
+         name    object
+```
 
 Songs - object references contained
+
 Stairway to heaven
 L. Z.
 0.49
+
 Highway to hell
 AC/DC
 0.69
+
 Eye of the tiger
 Survivor
 0.79
 
 Song - created only once -> gets referenced in the album array -> Shallow Copy (vs. Deep Copy)
 
-Social Network
+---
 
-profile / person
+###Social Network
+
+**profile** / person
+
 -> name (unique ID)
+
 -> status (String)
+
 -> image (GImage)
+
 -> list of friends (names)
 
 Friendship -> reciprocal
 
-Concurrency
+### Concurrency
 
-Email, IM, watching vid
+- Email, IM, watching vid
 
-The PCdoes one thing at a time but alternates very fast and makes it look simultaneous
+The PC does one thing at a time but alternates very fast and makes it look simultaneous
 
-Thread (of execution) - a program can have multiple threads of execution
+**Thread** (of execution) - a program can have multiple threads of execution
 
-Runnable
+### Runnable
 
+```
 public class MyClass implements Runnable {
-public MyClass|() {
-…
-}
-public void run() {
-}
+    public MyClass|() {
+    …
+    }
+    public void run() {
+    }
 }
 
 MyClass X = new Myclass ();
 Thread T = new Thread (X);
 T.start();
+```
 
 One thread can execute stuff, one listens for events etc.
+
 Shared data between threads.
 
-ACM libraries
+---
+
+### ACM libraries
+
 ACM - association for computing machinery
 
-Standard Java
+### Standard Java
 
-main -> method at which Java classes start running
+**main** -> method at which Java classes start running
 
-main method header:
+**main method header**:
+
+```
 public static void main (String<> args) {
-…
-e.g. new NameSurfer().Start(args);
+    …
+    e.g. new NameSurfer().Start(args);
 }
+```
+
 Without ACM and the libraries to help -> a lot more standard Java to write
 
-What follows
+---
 
-CS106A
-|
-V
-CS106B -> C++
-Implement a hashmap
-Recursion - ‘method calls itself’
-n! = n x (n -1) x (n - 2) x … x 1
-n! = n x (n - 1)!
-‘define a function in terms of itself’
+---
+
+### What follows
+
+CS106A -> CS106B (C++)
+
+- Implement a hashmap
+- Recursion - ‘method calls itself’
+- n! = n x (n -1) x (n - 2) x … x 1
+  - n! = n x (n - 1)!
+- ‘define a function in terms of itself’
+
+---
 
 CS103A/B -> Discrete Math
 
 Computability -> some functions can’t be computed
 
+---
+
 CS107 -> low - level (hardware - software interaction)
+
 CS108 -> OO systems / larger apps
 
+---
+
 CS121 / 221 -> A>I> / robotics
-Computational biology
-Data analysis
+
+- Computational biology
+- Data analysis
+
+---
 
 CS140 - Op. systems
+
 CS161 - data structures
 
-Graphics
-Movie graphics
-Digital photography
+---
 
-Databases
+### Graphics
 
-Google.standford.edu
-Mispelling of googol - 10100
-Crypto -> Web. sec.
+- Movie graphics
+- Digital photography
 
-Machine Learning -> spam filtering
+### Databases
+
+- Google.standford.edu
+- Mispelling of googol - 10100
+
+### Crypto -> Web. sec.
+
+### Machine Learning -> spam filtering
 
 HCI - human-computer interactions
 
+---
+
 CS
+
 EE - electrical engineering (hardware)
+
 Math + Comp. Sci. -> math
+
 Sym. Sys. -> symbolic systems
-Linguistics
-CS
-Philosophy
-Psychology
+
+- Linguistics
+- CS
+- Philosophy
+- Psychology
+
+---
 
 CS + business
-Prod. mgmt.
-Entrepreneurship
-Finance ( computational)
+
+- Prod. mgmt.
+- Entrepreneurship
+- Finance ( computational)
 
 CS + bio
-Bio informatics - medical (BMI - bio-medical info.)
-Genomics
-Bio engineering
+
+- Bio informatics - medical (BMI - bio-medical info.)
+- Genomics
+- Bio engineering
 
 CS + Law
-Digital media intelectual property, copyright, filesharing
+
+- Digital media intelectual property, copyright, filesharing
 
 CS (+CS)
-Programming
-Engineering mgmt.
-Teaching (CS198)
+
+- Programming
+- Engineering mgmt.
+- Teaching (CS198)
 
 CS198 - CS106A/B
-Teach section
-Social
-Faculty
-Network
+
+- Teach section
+- Social
+- Faculty
+- Network
+
+---
+
+---

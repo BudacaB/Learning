@@ -264,3 +264,101 @@ There are 3 basic uses of functions:
     	- to avoid side effects - create a new objects from the original to work on
 
 =======================================
+
+## Functional Programming
+
+Key concepts:
+
+- Pure functions
+- Function composition
+- Avoid shared state
+- Avoid mutating state
+- Avoid side effects
+
+### FP
+
+- is the process of building software by composing pure functions, avoiding shared state, mutable data, and side-effects.
+- is declarative rather than imperative, and application state flows through pure functions ; contrast with object oriented programming, where application state is usually shared and colocated with methods in objects.
+
+### Pure functions
+
+- Given the same inputs, always returns the same output
+- Has no side-effects
+- a very important property is referential transparency (you can replace a function call with its resulting value without changing the meaninf of the program)
+
+### Function composition
+
+- is the process of combining two or more functions in order to produce a new function or perform some computation
+- e.g. the composition f . g (the dot means “composed with”) is equivalent to f(g(x)) in JavaScript
+
+### Shared State
+
+- is any variable, object, or memory space that exists in a shared scope, or as the property of an object being passed between scopes.
+- a shared scope can include global scope or closure scopes.
+- often, in object oriented programming, objects are shared between scopes by adding properties to other objects.
+- when you avoid shared state, the timing and order of function calls don’t change the result of calling the function.
+- with pure functions, given the same input, you’ll always get the same output. This makes function calls completely independent of other function calls, which can radically simplify changes and refactoring. A change in one function, or the timing of a function call won’t ripple out and break other parts of the program.
+
+### Immutability
+
+- an immutable object is an object that can’t be modified after it’s created.
+- conversely, a mutable object is any object which can be modified after it’s created.
+
+### Side Effects
+
+- a side effect is any application state change that is observable outside the called function other than its return value. Side effects include:
+
+Side effects include:
+
+- Modifying any external variable or object property (e.g., a global variable, or a variable in the parent function scope chain)
+- Logging to the console
+- Writing to the screen
+- Writing to a file
+- Writing to the network
+- Triggering any external process
+- Calling any other functions with side-effects
+
+### Reusability Through Higher Order Functions
+
+- Functional programming tends to reuse a common set of functional utilities to process data.
+- Object oriented programming tends to colocate methods and data in objects.
+- In functional programming, any type of data is fair game.
+- JavaScript has first class functions, which allows us to treat functions as data — assign them to variables, pass them to other functions, return them from functions, etc…
+- A higher order function is any function which takes a function as an argument, returns a function, or both.
+
+#### Higher order functions are often used to:
+
+- Abstract or isolate actions, effects, or async flow control using callback functions, promises, monads, etc…
+- Create utilities which can act on a wide variety of data types
+- Partially apply a function to its arguments or create a curried function for the purpose of reuse or function composition
+- Take a list of functions and return some composition of those input functions
+
+#### Containers, Functors, Lists, and Streams
+
+- A functor is something that can be mapped over. In other words, it’s a container which has an interface which can be used to apply a function to the values inside it.
+- When you see the word functor, you should think “mappable”.
+- The same map() utility can act on a variety of data types. It does that by lifting the mapping operation to work with a functor API. The important flow control operations used by map() take advantage of that interface. In the case of Array.prototype.map(), the container is an array, but other data structures can be functors, too — as long as they supply the mapping API.
+
+(A list expressed over time is a stream)
+
+### Declarative vs Imperative
+
+- Functional programming is a declarative paradigm, meaning that the program logic is expressed without explicitly describing the flow control.
+- Imperative programs spend lines of code describing the specific steps used to achieve the desired results — the flow control: How to do things.
+- Declarative programs abstract the flow control process, and instead spend lines of code describing the data flow: What to do. The how gets abstracted away.
+- Imperative code frequently utilizes statements. A statement is a piece of code which performs some action. Examples of commonly used statements include for, if, switch, throw, etc…
+- Declarative code relies more on expressions. An expression is a piece of code which evaluates to some value. Expressions are usually some combination of function calls, values, and operators which are evaluated to produce the resulting value.
+
+### Conclusion
+
+Functional programming favors:
+
+- Pure functions instead of shared state & side effects
+- Immutability over mutable data
+- Function composition over imperative flow control
+- Lots of generic, reusable utilities that use higher order functions to act on many data types instead of methods that only operate on their colocated data
+- Declarative rather than imperative code (what to do, rather than how to do it)
+- Expressions over statements
+- Containers & higher order functions over ad-hoc polymorphism
+
+---

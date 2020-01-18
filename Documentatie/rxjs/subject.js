@@ -1,3 +1,5 @@
+// subject inherits from observable -> can call next() on it to have it emit a value if needed
+
 const rxjs = require("rxjs");
 
 var subject = new rxjs.Subject();

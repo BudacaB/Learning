@@ -34,7 +34,7 @@ The type or member can be accessed by any code in the same assembly
 Same assembly?
 
 Acelasi dll file
-Your visual sthdio solution file can contain multiple projects
+Your visual studio solution file can contain multiple projects
 
 ---
 
@@ -362,3 +362,11 @@ Functional programming favors:
 - Containers & higher order functions over ad-hoc polymorphism
 
 ---
+
+## RXJS
+
+Use cases::
+
+- mergeMap() - handy if you have multiple data sources and you want to merge them into one, where one of the data sources is the one telling you when the event emission happens (inner observable)
+- switchMap() - for http requests - if you have some autocompletion functionality and you reach out to your server whenever the user types something, you don't want the old requests to continue whenever the user changes his opinion; you're sending a new request and want to cancel the old one / the old observables, so that you don't have to handle the data that will eventually come back, rxjs will handle that
+- BehaviourSubject - typically used whenever you do use your Subject like a normal variable which should hold the value, but which you want to change eventually, and which should then inform other parts of the app of this change

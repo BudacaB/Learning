@@ -223,7 +223,7 @@ state mgmt - 'starea appului'
 
 =======================================
 
-## There are 3 basic uses of functions:
+### There are 3 basic uses of functions:
 
     - mapping inputs to outputs
 

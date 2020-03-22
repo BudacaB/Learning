@@ -11,6 +11,8 @@
     "express"
   ],
   "dependencies": {
-    "express": "^4.16.4"
+    "ejs": "^3.0.1",
+    "express": "^4.16.4",
+    "mongoose": "^5.9.5"
   }
 }

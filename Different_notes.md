@@ -370,3 +370,16 @@ Use cases::
 - mergeMap() - handy if you have multiple data sources and you want to merge them into one, where one of the data sources is the one telling you when the event emission happens (inner observable)
 - switchMap() - for http requests - if you have some autocompletion functionality and you reach out to your server whenever the user types something, you don't want the old requests to continue whenever the user changes his opinion; you're sending a new request and want to cancel the old one / the old observables, so that you don't have to handle the data that will eventually come back, rxjs will handle that
 - BehaviourSubject - typically used whenever you do use your Subject like a normal variable which should hold the value, but which you want to change eventually, and which should then inform other parts of the app of this change
+
+---
+
+## JPA
+
+- JPA - java persistance api - can be used to work with H2
+- H2 - in-memory database
+- Hibernate - implementation of JPA
+- How? 
+	- mapping data by way of a JPA 'Entity' (a bean / class) by way of the Spring framework
+	- using a Repository interface implementation (data store abstraction used for read / write operations)
+
+---

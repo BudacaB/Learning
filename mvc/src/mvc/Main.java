@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         PersonList personList = new PersonList();
-        View view = new View();
+        View view = new View(personList);
         Controller controller = new Controller(personList, view);
 
         controller.addPerson(new Person("Tex", 25));

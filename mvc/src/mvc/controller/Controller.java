@@ -18,6 +18,6 @@ public class Controller {
     }
 
     public void displayList() {
-        view.display(personList);
+        view.display();
     }
 }

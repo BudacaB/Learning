@@ -2,28 +2,33 @@ package com.lru.cache;
 
 import java.util.Deque;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Cache {
 
+    Logger logger
+            = Logger.getLogger(
+            Cache.class.getName());
+
     // store keys of cache
-    private Deque<Integer> doublyQueue;
+    private final Deque<Integer> doublyQueue;
     // store references of key in cache
-    private HashSet<Integer> hashSet;
+    private final HashSet<Integer> hashSet;
     // max capacity of cache
-    private final int CACHE_SIZE;
+    private final int cacheSize;
 
     public Cache(int capacity) {
         this.doublyQueue = new LinkedList<>();
         this.hashSet = new HashSet<>();
-        this.CACHE_SIZE = capacity;
+        this.cacheSize = capacity;
     }
 
     // refer the page within the LRU cache
     public void refer(int page) {
         if (!hashSet.contains(page)) {
-            if (doublyQueue.size() == CACHE_SIZE) {
+            if (doublyQueue.size() == cacheSize) {
                 int last = doublyQueue.removeLast();
                 hashSet.remove(last);
             }
@@ -38,9 +43,10 @@ public class Cache {
 
     // display contents of cache
     public void display() {
-        Iterator<Integer> itr = doublyQueue.iterator();
-        while (itr.hasNext()) {
-            System.out.print(itr.next() + " ");
+        System.out.println("set " + hashSet);
+        System.out.println("queue " + doublyQueue);
+        for (Integer integer : doublyQueue) {
+            logger.log(Level.INFO, () -> integer + " ");
         }
     }
 }

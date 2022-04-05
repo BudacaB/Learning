@@ -3,11 +3,6 @@ package com.lru.cache;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.Deque;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-
 @SpringBootApplication
 public class CacheApplication {
 

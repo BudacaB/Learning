@@ -43,8 +43,6 @@ public class Cache {
 
     // display contents of cache
     public void display() {
-        System.out.println("set " + hashSet);
-        System.out.println("queue " + doublyQueue);
         for (Integer integer : doublyQueue) {
             logger.log(Level.INFO, () -> integer + " ");
         }

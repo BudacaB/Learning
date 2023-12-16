@@ -4,35 +4,32 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-client = OpenAI()
 
+class ChatGPT:
 
-def get_completion_and_token_count(messages,
-                                   model="gpt-3.5-turbo",
-                                   temperature=0,
-                                   max_tokens=500):
-    response = client.chat.completions.create(model=model,
-                                              messages=messages,
-                                              temperature=temperature,
-                                              max_tokens=max_tokens)
+    def __init__(self):
+        self.client = OpenAI()  # Initialize the OpenAI client
 
-    token_dict = {
-        'prompt_tokens': response.usage.prompt_tokens,
-        'completion_tokens': response.usage.completion_tokens,
-        'total_tokens': response.usage.total_tokens,
-    }
+    def get_completion_and_token_count(self,
+                                       messages,
+                                       model="gpt-3.5-turbo",
+                                       temperature=0,
+                                       max_tokens=500):
+        response = self.client.chat.completions.create(model=model,
+                                                  messages=messages,
+                                                  temperature=temperature,
+                                                  max_tokens=max_tokens)
 
-    return response.choices[0].message, token_dict
+        token_dict = {
+            'prompt_tokens': response.usage.prompt_tokens,
+            'completion_tokens': response.usage.completion_tokens,
+            'total_tokens': response.usage.total_tokens,
+        }
 
+        return response.choices[0].message, token_dict
 
-message = [
-    {'role': 'system',
-     'content': """None"""},
-    {'role': 'user',
-     'content': """What is the capital of France?"""},
-]
+    def get_moderation_check(self, message):
+        response = self.client.moderations.create(input=message)
 
-answer, token_info = get_completion_and_token_count(message)
+        return response.results
 
-print(answer)
-print(token_info)

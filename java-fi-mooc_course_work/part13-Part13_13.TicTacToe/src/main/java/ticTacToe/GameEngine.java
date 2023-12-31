@@ -115,7 +115,7 @@ public class GameEngine {
     
     public void changeTurn() {
         if (this.turn.equals("X")) {
-            this.turn = "0";
+            this.turn = "O";
         } else {
             this.turn = "X";
         }

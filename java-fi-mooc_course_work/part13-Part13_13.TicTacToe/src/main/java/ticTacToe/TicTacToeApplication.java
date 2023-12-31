@@ -12,19 +12,21 @@ import javafx.stage.Stage;
 
 
 public class TicTacToeApplication extends Application {
-    
-    private GameEngine gameEngine;
+  
+//    private GameEngine gameEngine;
+//
+//    @Override
+//    public void init() throws Exception {
+//        this.gameEngine = new GameEngine();
+//    }
 
     @Override
-    public void init() throws Exception {
-        this.gameEngine = new GameEngine();
-    }
-
-    @Override
-    public void start(Stage window) throws Exception {
+    public void start(Stage stage) throws Exception {
+        
+        GameEngine gameEngine = new GameEngine();
         
         BorderPane layout = new BorderPane(); 
-        Label status = new Label("Turn " + gameEngine.getTurn());
+        Label status = new Label("Turn: " + gameEngine.getTurn());
         status.setFont(Font.font("Monospaced", 40));
         GridPane components = new GridPane();
         
@@ -59,110 +61,110 @@ public class TicTacToeApplication extends Application {
         
         topLeft.setOnMouseClicked((event) -> {
             String turn = gameEngine.getTurn();
-            if (makeMove(0, 0) == 1) {
+            if (makeMove(gameEngine, 0, 0) == 1) {
                 topLeft.setText(turn);
                 if (gameEngine.checkWinner() == 1 || gameEngine.checkWinner() == -1) {
                     status.setText("The end!");
                     components.setDisable(true);
                     return;
                 }
-                status.setText("Turn " + gameEngine.getTurn());
+                status.setText("Turn: " + gameEngine.getTurn());
             }
         });
         topMid.setOnMouseClicked((event) -> {
             String turn = gameEngine.getTurn();
-            if (makeMove(1, 0) == 1) {
+            if (makeMove(gameEngine, 1, 0) == 1) {
                 topMid.setText(turn);
                 if (gameEngine.checkWinner() == 1 || gameEngine.checkWinner() == -1) {
                     status.setText("The end!");
                     components.setDisable(true);
                     return;
                 }
-                status.setText("Turn " + gameEngine.getTurn());
+                status.setText("Turn: " + gameEngine.getTurn());
             }
         });
         topRight.setOnMouseClicked((event) -> {
             String turn = gameEngine.getTurn();
-            if (makeMove(2, 0) == 1) {
+            if (makeMove(gameEngine, 2, 0) == 1) {
                 topRight.setText(turn);
                 if (gameEngine.checkWinner() == 1 || gameEngine.checkWinner() == -1) {
                     status.setText("The end!");
                     components.setDisable(true);
                     return;
                 }
-                status.setText("Turn " + gameEngine.getTurn());
+                status.setText("Turn: " + gameEngine.getTurn());
             }
         });
         midLeft.setOnMouseClicked((event) -> {
             String turn = gameEngine.getTurn();
-            if (makeMove(0, 1) == 1) {
+            if (makeMove(gameEngine, 0, 1) == 1) {
                 midLeft.setText(turn);
                 if (gameEngine.checkWinner() == 1 || gameEngine.checkWinner() == -1) {
                     status.setText("The end!");
                     components.setDisable(true);
                     return;
                 }
-                status.setText("Turn " + gameEngine.getTurn());
+                status.setText("Turn: " + gameEngine.getTurn());
             }
         });
         center.setOnMouseClicked((event) -> {
             String turn = gameEngine.getTurn();
-            if (makeMove(1, 1) == 1) {
+            if (makeMove(gameEngine, 1, 1) == 1) {
                 center.setText(turn);
                 if (gameEngine.checkWinner() == 1 || gameEngine.checkWinner() == -1) {
                     status.setText("The end!");
                     components.setDisable(true);
                     return;
                 }
-                status.setText("Turn " + gameEngine.getTurn());
+                status.setText("Turn: " + gameEngine.getTurn());
             }
         });
         midRight.setOnMouseClicked((event) -> {
             String turn = gameEngine.getTurn();
-            if (makeMove(2, 1) == 1) {
+            if (makeMove(gameEngine, 2, 1) == 1) {
                 midRight.setText(turn);
                 if (gameEngine.checkWinner() == 1 || gameEngine.checkWinner() == -1) {
                     status.setText("The end!");
                     components.setDisable(true);
                     return;
                 }
-                status.setText("Turn " + gameEngine.getTurn());
+                status.setText("Turn: " + gameEngine.getTurn());
             }
         });
         bottomLeft.setOnMouseClicked((event) -> {
             String turn = gameEngine.getTurn();
-            if (makeMove(0, 2) == 1) {
+            if (makeMove(gameEngine, 0, 2) == 1) {
                 bottomLeft.setText(turn);
                 if (gameEngine.checkWinner() == 1 || gameEngine.checkWinner() == -1) {
                     status.setText("The end!");
                     components.setDisable(true);
                     return;
                 }
-                status.setText("Turn " + gameEngine.getTurn());
+                status.setText("Turn: " + gameEngine.getTurn());
             }
         });
         bottomMid.setOnMouseClicked((event) -> {
             String turn = gameEngine.getTurn();
-            if (makeMove(1, 2) == 1) {
+            if (makeMove(gameEngine, 1, 2) == 1) {
                 bottomMid.setText(turn);
                 if (gameEngine.checkWinner() == 1 || gameEngine.checkWinner() == -1) {
                     status.setText("The end!");
                     components.setDisable(true);
                     return;
                 }
-                status.setText("Turn " + gameEngine.getTurn());
+                status.setText("Turn: " + gameEngine.getTurn());
             }
         });
         bottomRight.setOnMouseClicked((event) -> {
             String turn = gameEngine.getTurn();
-            if (makeMove(2, 2) == 1) {
+            if (makeMove(gameEngine, 2, 2) == 1) {
                 bottomRight.setText(turn);
                 if (gameEngine.checkWinner() == 1 || gameEngine.checkWinner() == -1) {
                     status.setText("The end!");
                     components.setDisable(true);
                     return;
                 }
-                status.setText("Turn " + gameEngine.getTurn());
+                status.setText("Turn: " + gameEngine.getTurn());
             }
         });
                 
@@ -176,15 +178,15 @@ public class TicTacToeApplication extends Application {
         
         Scene scene = new Scene(layout, 300, 350);
         
-        window.setScene(scene);
-        window.show();
+        stage.setScene(scene);
+        stage.show();
     }
     
     public static void main(String[] args) {
         launch(TicTacToeApplication.class);
     }
     
-    private int makeMove(int x, int y) {
+    private int makeMove(GameEngine gameEngine, int x, int y) {
             if (gameEngine.getTurn().equals("X")) {
                 return gameEngine.placeValue(x, y, 1);
             } else {
